@@ -958,7 +958,9 @@ export default function ProgramsPage() {
                     <CardFooter className="pt-2">
                       <Link href={`/programs/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
-                          Apply Now
+                          {/* Apply Now */}
+
+                          View Details
                         </Button>
                       </Link>
                     </CardFooter>
@@ -1068,7 +1070,7 @@ export default function ProgramsPage() {
                     <CardFooter className="pt-2">
                       <Link href={`/programs/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
-                          Apply Now
+                          View Details
                         </Button>
                       </Link>
                     </CardFooter>
@@ -1123,7 +1125,7 @@ export default function ProgramsPage() {
                     <CardFooter className="pt-2">
                       <Link href={`/programs/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
-                          Apply Now
+                          View Details
                         </Button>
                       </Link>
                     </CardFooter>

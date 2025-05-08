@@ -233,7 +233,9 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20">
-                Apply Now
+              <Link href="/programs">Apply Now</Link>
+
+            
               </Button>
               <Button variant="outline" className="text-lg">
                 Download Brochure
