@@ -87,7 +87,8 @@ export function Navbar() {
           </NavigationMenu>
           <ThemeToggle />
           <Button className="ml-4 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-accent/20">
-            Apply Now
+          <Link href="/apply">Apply Now</Link>
+
           </Button>
         </nav>
 

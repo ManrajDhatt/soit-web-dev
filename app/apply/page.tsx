@@ -200,12 +200,12 @@ export default function ApplyPage() {
       {/* Hero Section */}
       <section className="relative mb-12 rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="absolute inset-0">
-          <Image
+          {/* <Image
             src="/images/apply-hero.jpg"
             alt="Apply to School of Immersive Technologies"
             fill
             className="object-cover opacity-30"
-          />
+          /> */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
         </div>
         <div className="relative z-10 px-6 py-12 text-center">
@@ -227,7 +227,7 @@ export default function ApplyPage() {
       )}
 
       {/* Progress Stepper */}
-      <div className="mb-12">
+      {/* <div className="mb-12">
         <div className="relative flex justify-between items-center">
           <div className="absolute top-4 left-0 right-0 h-1 bg-muted z-0">
             <div
@@ -248,11 +248,50 @@ export default function ApplyPage() {
             </div>
           ))}
         </div>
+      </div> */}
+{/* Sticky Progress Stepper */}
+<div className="sticky top-0 bg-background pt-40 pb-2 shadow-sm z-30">
+  <div className="container mx-auto px-4">
+    <div className="relative max-w-4xl mx-auto">
+      {/* Step circles */}
+      <div className="flex justify-between px-8">
+        {/* Creating a container for the line with padding */}
+        <div className="absolute top-4 w-full mb-9 ">
+          {/* Background line - positioned with padding */}
+          <div className="absolute h-1 bg-muted w-[80%] left-[5%]"></div>
+          
+          {/* Progress line - grows based on current step */}
+          <div 
+            className="absolute h-1 bg-primary transition-all duration-300" 
+            style={{ 
+              width: `${(currentStep / (steps.length - 1)) * 80}%`,
+              left: '5%'
+            }}
+          ></div>
+        </div>
+        
+        {/* Step indicators */}
+        {steps.map((step, index) => (
+          <div key={index} className="z-10 flex flex-col items-center">
+            <div
+              className={`h-8 w-8 rounded-full flex items-center justify-center ${
+                index <= currentStep ? "bg-primary text-white" : "bg-muted text-muted-foreground"
+              }`}
+            >
+              {index + 1}
+            </div>
+            <p className="mt-2 text-xs font-medium">
+              {step}
+            </p>
+          </div>
+        ))}
       </div>
-
+    </div>
+  </div>
+</div>
       {/* Form Section */}
       <section className="mb-16">
-        <Card className="mx-auto max-w-4xl">
+        <Card className="mx-auto max-w-4xl mt-10">
           <CardHeader>
             <CardTitle className="text-3xl font-heading">Application Form</CardTitle>
           </CardHeader>
