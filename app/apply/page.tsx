@@ -249,8 +249,9 @@ export default function ApplyPage() {
           ))}
         </div>
       </div> */}
+
 {/* Sticky Progress Stepper */}
-<div className="sticky top-0 bg-background pt-20 pb-2 shadow-sm z-30">
+<div className="sticky top-10 bg-background pt-10 pb-2 shadow-sm z-30">
   <div className="container mx-auto px-4">
     <div className="relative max-w-4xl mx-auto">
       {/* Step circles */}
