@@ -1319,13 +1319,13 @@ export default function CoursePage({ params }: Props) {
       </section>
 
       {/* Sticky CTA Button */}
-      <a
+      {/* <a
         href="/apply"
         className="fixed bottom-6 right-6 z-50 flex h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
       >
         Apply Now
         <ChevronRight className="ml-2 h-4 w-4" />
-      </a>
+      </a> */}
     </div>
   );
 }

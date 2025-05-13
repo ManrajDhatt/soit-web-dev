@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Clock, Calendar, Award, Users, ChevronRight } from "lucide-react";
 import { courses } from "@/lib/courses";
@@ -13,344 +13,179 @@ export const metadata: Metadata = {
   description: "Explore our cutting-edge courses in VR, AR, and immersive technologies at the School of Immersive Technologies.",
 };
 
-// Function to create a URL-friendly slug from the course title
-const createSlug = (title: string) => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-};
-
 export default function ProgramsPage() {
   return (
-    <div className="container mx-auto px-4 py-24 pt-32 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
-          <h1 className="mb-4 font-heading text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+    <div className="relative bg-background">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-16 sm:px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="mb-6 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl animate-fade-in-up">
             Our Courses
           </h1>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl animate-fade-in-up animation-delay-200">
             Comprehensive education in immersive technologies to prepare you for the future of digital experiences
           </p>
         </div>
+      </section>
 
-        <Tabs defaultValue="diploma" className="mb-16">
-          <div className="flex justify-center">
-            <TabsList className="mb-8 flex flex-col items-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
-              <TabsTrigger value="degree" className="w-full sm:w-auto">
+      {/* Tabs Section */}
+      <section className="container mx-auto px-4 sm:px-6 mb-16">
+        <Tabs defaultValue="diploma">
+          <div className="flex justify-center mb-12">
+            <TabsList className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-xl">
+              <TabsTrigger
+                value="degree"
+                className="flex-shrink-0 px-4 py-2 text-sm sm:text-base font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
+              >
                 Degree Courses
               </TabsTrigger>
-              <TabsTrigger value="diploma" className="w-full sm:w-auto">
+              <TabsTrigger
+                value="diploma"
+                className="flex-shrink-0 px-4 py-2 text-sm sm:text-base font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
+              >
                 Diploma Courses
               </TabsTrigger>
-              <TabsTrigger value="advanced-diploma" className="w-full sm:w-auto">
+              <TabsTrigger
+                value="advanced-diploma"
+                className="flex-shrink-0 px-4 py-2 text-sm sm:text-base font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
+              >
                 Advanced Diploma
               </TabsTrigger>
-              <TabsTrigger value="short-term" className="w-full sm:w-auto">
+              <TabsTrigger
+                value="short-term"
+                className="flex-shrink-0 px-4 py-2 text-sm sm:text-base font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
+              >
                 Short-Term & Specialized
               </TabsTrigger>
             </TabsList>
           </div>
 
-          {/* Alternative Scrollable Approach (Uncomment to use instead of stacking) */}
-          {/*
-          <div className="flex justify-center">
-            <TabsList className="mb-8 flex overflow-x-auto space-x-2">
-              <TabsTrigger value="degree" className="flex-shrink-0">
-                Degree Courses
-              </TabsTrigger>
-              <TabsTrigger value="diploma" className="flex-shrink-0">
-                Diploma Courses
-              </TabsTrigger>
-              <TabsTrigger value="advanced-diploma" className="flex-shrink-0">
-                Advanced Diploma
-              </TabsTrigger>
-              <TabsTrigger value="short-term" className="flex-shrink-0">
-                Short-Term & Specialized
-              </TabsTrigger>
-            </TabsList>
-          </div>
-          */}
-
-          <TabsContent value="degree">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {courses
-                .filter((course) => course.category === "degree")
-                .map((program, index) => (
-                  <Card
-                    key={index}
-                    className="flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 w-full max-w-md mx-auto"
-                  >
-                    <div className="relative h-[150px] w-full">
-                      <Image src={program.image} alt={program.title} fill className="object-cover" />
-                    </div>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg">{program.title}</CardTitle>
-                      <CardDescription className="text-sm">{program.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow pb-2">
-                      <div className="mb-3 flex items-center gap-4">
-                        <div className="flex items-center gap-1.5">
-                          <Clock className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.duration}</span>
+          {["degree", "diploma", "advanced-diploma", "short-term"].map((category) => (
+            <TabsContent key={category} value={category}>
+              <div className="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {courses
+                  .filter((course) => course.category === category)
+                  .map((program, index) => (
+                    <div
+                      key={index}
+                      className="group bg-card rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                    >
+                      <div className="relative h-48">
+                        <Image
+                          src={program.image}
+                          alt={program.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-lg font-semibold text-foreground mb-2">{program.title}</h3>
+                        <p className="text-sm text-muted-foreground mb-4">{program.description}</p>
+                        <div className="mb-4 flex items-center gap-4">
+                          <div className="flex items-center gap-1.5">
+                            <Clock className="h-4 w-4 text-primary" />
+                            <span className="text-xs text-muted-foreground">{program.duration}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Users className="h-4 w-4 text-primary" />
+                            <span className="text-xs text-muted-foreground">{program.intake}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1.5">
-                          <Users className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.intake}</span>
+                        <div className="mb-4">
+                          <span className="text-xs font-medium">Fees: </span>
+                          <span className="text-xs text-muted-foreground">{program.fees}</span>
+                        </div>
+                        <div>
+                          <h4 className="mb-2 text-sm font-medium text-foreground">Program Highlights:</h4>
+                          <ul className="space-y-1 text-muted-foreground">
+                            {program.highlights.map((highlight, hIndex) => (
+                              <li key={hIndex} className="flex items-start gap-2 text-xs">
+                                <ChevronRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                                {highlight}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-                      <div className="mb-3">
-                        <span className="text-xs font-medium">Fees: </span>
-                        <span className="text-xs text-muted-foreground">{program.fees}</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-1.5 text-xs font-medium">Program Highlights:</h4>
-                        <ul className="space-y-1">
-                          {program.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="flex items-start gap-1.5 text-xs">
-                              <ChevronRight className="h-3 w-3 text-primary mt-0.5" />
-                              <span className="text-muted-foreground">{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-                    <CardFooter className="pt-2">
-                      <Link href={`/courses/${program.slug}`}>
-                        <Button variant="default" className="w-full text-sm">
-                          View Details
+                      <div className="p-4">
+                        <Button asChild variant="default" className="w-full rounded-full text-sm">
+                          <Link href={`/courses/${program.slug}`}>View Details</Link>
                         </Button>
-                      </Link>
-                    </CardFooter>
-                  </Card>
-                ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="diploma">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {courses
-                .filter((course) => course.category === "diploma")
-                .map((program, index) => (
-                  <Card
-                    key={index}
-                    className="flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 w-full max-w-md mx-auto"
-                  >
-                    <div className="relative h-[150px] w-full">
-                      <Image src={program.image} alt={program.title} fill className="object-cover" />
+                      </div>
                     </div>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg">{program.title}</CardTitle>
-                      <CardDescription className="text-sm">{program.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow pb-2">
-                      <div className="mb-3 flex items-center gap-4">
-                        <div className="flex items-center gap-1.5">
-                          <Clock className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.duration}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Users className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.intake}</span>
-                        </div>
-                      </div>
-                      <div className="mb-3">
-                        <span className="text-xs font-medium">Fees: </span>
-                        <span className="text-xs text-muted-foreground">{program.fees}</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-1.5 text-xs font-medium">Program Highlights:</h4>
-                        <ul className="space-y-1">
-                          {program.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="flex items-start gap-1.5 text-xs">
-                              <ChevronRight className="h-3 w-3 text-primary mt-0.5" />
-                              <span className="text-muted-foreground">{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-                    <CardFooter className="pt-2">
-                      <Link href={`/courses/${program.slug}`}>
-                        <Button variant="default" className="w-full text-sm">
-                          View Details
-                        </Button>
-                      </Link>
-                    </CardFooter>
-                  </Card>
-                ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="advanced-diploma">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {courses
-                .filter((course) => course.category === "advanced-diploma")
-                .map((program, index) => (
-                  <Card
-                    key={index}
-                    className="flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 w-full max-w-md mx-auto"
-                  >
-                    <div className="relative h-[150px] w-full">
-                      <Image src={program.image} alt={program.title} fill className="object-cover" />
-                    </div>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg">{program.title}</CardTitle>
-                      <CardDescription className="text-sm">{program.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow pb-2">
-                      <div className="mb-3 flex items-center gap-4">
-                        <div className="flex items-center gap-1.5">
-                          <Clock className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.duration}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Users className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.intake}</span>
-                        </div>
-                      </div>
-                      <div className="mb-3">
-                        <span className="text-xs font-medium">Fees: </span>
-                        <span className="text-xs text-muted-foreground">{program.fees}</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-1.5 text-xs font-medium">Program Highlights:</h4>
-                        <ul className="space-y-1">
-                          {program.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="flex items-start gap-1.5 text-xs">
-                              <ChevronRight className="h-3 w-3 text-primary mt-0.5" />
-                              <span className="text-muted-foreground">{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-                    <CardFooter className="pt-2">
-                      <Link href={`/courses/${program.slug}`}>
-                        <Button variant="default" className="w-full text-sm">
-                          View Details
-                        </Button>
-                      </Link>
-                    </CardFooter>
-                  </Card>
-                ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="short-term">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {courses
-                .filter((course) => course.category === "short-term")
-                .map((program, index) => (
-                  <Card
-                    key={index}
-                    className="flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 w-full max-w-md mx-auto"
-                  >
-                    <div className="relative h-[150px] w-full">
-                      <Image src={program.image} alt={program.title} fill className="object-cover" />
-                    </div>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg">{program.title}</CardTitle>
-                      <CardDescription className="text-sm">{program.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow pb-2">
-                      <div className="mb-3 flex items-center gap-4">
-                        <div className="flex items-center gap-1.5">
-                          <Clock className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.duration}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Users className="h-3.5 w-3.5 text-primary" />
-                          <span className="text-xs text-muted-foreground">{program.intake}</span>
-                        </div>
-                      </div>
-                      <div className="mb-3">
-                        <span className="text-xs font-medium">Fees: </span>
-                        <span className="text-xs text-muted-foreground">{program.fees}</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-1.5 text-xs font-medium">Program Highlights:</h4>
-                        <ul className="space-y-1">
-                          {program.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="flex items-start gap-1.5 text-xs">
-                              <ChevronRight className="h-3 w-3 text-primary mt-0.5" />
-                              <span className="text-muted-foreground">{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-                    <CardFooter className="pt-2">
-                      <Link href={`/courses/${program.slug}`}>
-                        <Button variant="default" className="w-full text-sm">
-                          View Details
-                        </Button>
-                      </Link>
-                    </CardFooter>
-                  </Card>
-                ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        {/* Admission Process */}
-        <div className="mb-16">
-          <h2 className="mb-8 text-center font-heading text-3xl font-bold tracking-tight">
-            Admission Process
-          </h2>
-          <div className="relative mx-auto max-w-3xl">
-            <div className="absolute left-6 top-9 bottom-5 w-1.5 -translate-x-1/4 bg-border" />
-            {[
-              {
-                title: "Application Submission",
-                description:
-                  "Complete the online application form and submit all required documents, including academic transcripts (10+2 for degree/diploma, open for short-term), statement of purpose, and portfolio (if applicable).",
-                icon: <Calendar className="h-6 w-6 text-primary-foreground" />,
-              },
-              {
-                title: "Entrance Examination",
-                description:
-                  "Qualified applicants for degree and diploma courses will be invited to take a program-specific entrance examination assessing relevant knowledge and aptitude.",
-                icon: <Award className="h-6 w-6 text-primary-foreground" />,
-              },
-              {
-                title: "Interview",
-                description:
-                  "Shortlisted candidates will participate in an interview with faculty members to discuss their background, goals, and fit for the program.",
-                icon: <Users className="h-6 w-6 text-primary-foreground" />,
-              },
-              {
-                title: "Admission Decision",
-                description:
-                  "Final admission decisions are made based on a holistic review of the application, entrance exam performance (if applicable), and interview.",
-                icon: <Award className="h-6 w-6 text-primary-foreground" />,
-              },
-            ].map((step, index) => (
-              <div key={index} className="relative z-10 mb-16 flex last:mb-0">
-                <div className="flex items-center">
-                  <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-primary">
-                    {step.icon}
-                    <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-card text-sm font-bold">
-                      {index + 1}
-                    </span>
-                  </div>
-                </div>
-                <div className="ml-6">
-                  <h3 className="font-heading text-xl font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{step.description}</p>
-                </div>
+                  ))}
               </div>
-            ))}
+            </TabsContent>
+          ))}
+        </Tabs>
+      </section>
+
+      {/* Admission Process Section */}
+      <section className="bg-muted/30 py-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+              Admission Process
+            </h2>
+            <div className="relative">
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
+              {[
+                {
+                  title: "Application Submission",
+                  description:
+                    "Complete the online application form and submit all required documents, including academic transcripts (10+2 for degree/diploma, open for short-term), statement of purpose, and portfolio (if applicable).",
+                  icon: <Calendar className="h-6 w-6 text-primary" />,
+                },
+                {
+                  title: "Entrance Examination",
+                  description:
+                    "Qualified applicants for degree and diploma courses will be invited to take a program-specific entrance examination assessing relevant knowledge and aptitude.",
+                  icon: <Award className="h-6 w-6 text-primary" />,
+                },
+                {
+                  title: "Interview",
+                  description:
+                    "Shortlisted candidates will participate in an interview with faculty members to discuss their background, goals, and fit for the program.",
+                  icon: <Users className="h-6 w-6 text-primary" />,
+                },
+                {
+                  title: "Admission Decision",
+                  description:
+                    "Final admission decisions are made based on a holistic review of the application, entrance exam performance (if applicable), and interview.",
+                  icon: <Award className="h-6 w-6 text-primary" />,
+                },
+              ].map((step, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center mb-12 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                >
+                  <div className="w-1/2 px-6">
+                    <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+                      <div className="flex items-center mb-4">
+                        <div className="p-2 bg-primary/10 rounded-full mr-4">{step.icon}</div>
+                        <h3 className="font-heading text-xl font-semibold">{step.title}</h3>
+                      </div>
+                      <p className="text-muted-foreground">{step.description}</p>
+                      <p className="text-primary font-medium mt-2">Step {index + 1}</p>
+                    </div>
+                  </div>
+                  <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Key Dates */}
-        <div className="mb-16">
-          <h2 className="mb-8 text-center font-heading text-3xl font-bold tracking-tight">
+      {/* Key Dates Section */}
+      <section className="container mx-auto px-4 py-16 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
             Key Dates for 2025-26 Admissions
           </h2>
-          <div className="mx-auto max-w-4xl rounded-xl border border-border bg-card p-8">
-            <div className="grid gap-6 md:grid-cols-2">
+          <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
+            <div className="grid gap-6 sm:grid-cols-2">
               {[
                 { event: "Applications Open", date: "November 1, 2024" },
                 { event: "Early Application Deadline", date: "January 15, 2025" },
@@ -361,87 +196,119 @@ export default function ProgramsPage() {
                 { event: "Admission Decisions", date: "June 15, 2025" },
                 { event: "Classes Begin", date: "August 1, 2025" },
               ].map((item, index) => (
-                <div key={index} className="flex items-center justify-between border-b border-border pb-4">
-                  <div className="font-medium">{item.event}</div>
+                <div
+                  key={index}
+                  className="flex items-center justify-between border-b border-border py-4 last:border-b-0"
+                >
+                  <div className="font-medium text-foreground">{item.event}</div>
                   <div className="text-right text-primary">{item.date}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Faculty */}
-        <div className="mb-16">
-          <h2 className="mb-8 text-center font-heading text-3xl font-bold tracking-tight">
-            Meet Our Faculty
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {[
-              {
-                name: "Dr. Rajiv Mehta",
-                role: "Professor of Spatial Computing",
-                image: "placeholder.jpg",
-              },
-              {
-                name: "Dr. Sarah Williams",
-                role: "Associate Professor of VR Design",
-                image: "placeholder.jpg",
-              },
-              {
-                name: "Prof. Anand Krishnan",
-                role: "Assistant Professor of AR Applications",
-                image: "placeholder.jpg",
-              },
-              {
-                name: "Dr. Maya Patel",
-                role: "Professor of Immersive Learning",
-                image: "placeholder.jpg",
-              },
-            ].map((faculty, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-xl">
-                <div className="relative h-[300px] w-full overflow-hidden">
-                  <Image
-                    src={faculty.image}
-                    alt={faculty.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-end p-6">
-                    <h3 className="text-center font-heading text-lg font-semibold">
-                      {faculty.name}
-                    </h3>
-                    <p className="text-center text-sm text-primary">{faculty.role}</p>
+      {/* Faculty Section */}
+      <section className="bg-muted/30 py-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+              Meet Our Faculty
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  name: "Dr. Rajiv Mehta",
+                  role: "Professor of Spatial Computing",
+                  image: "placeholder.jpg",
+                },
+                {
+                  name: "Dr. Sarah Williams",
+                  role: "Associate Professor of VR Design",
+                  image: "placeholder.jpg",
+                },
+                {
+                  name: "Prof. Anand Krishnan",
+                  role: "Assistant Professor of AR Applications",
+                  image: "placeholder.jpg",
+                },
+                {
+                  name: "Dr. Maya Patel",
+                  role: "Professor of Immersive Learning",
+                  image: "placeholder.jpg",
+                },
+              ].map((faculty, index) => (
+                <div
+                  key={index}
+                  className="group relative rounded-xl bg-card shadow-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                >
+                  <div className="relative h-48">
+                    <Image
+                      src={faculty.image}
+                      alt={faculty.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <div className="p-6 text-center">
+                    <h3 className="text-lg font-semibold text-foreground">{faculty.name}</h3>
+                    <p className="text-sm text-primary">{faculty.role}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/faculty">
-              <Button variant="outline">View All Faculty</Button>
-            </Link>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button asChild variant="outline" className="rounded-full">
+                <Link href="/faculty">View All Faculty</Link>
+              </Button>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Call to Action */}
-        <div className="rounded-xl border border-border bg-gradient-to-br from-primary/10 to-accent/10 p-8 text-center shadow-xl">
-          <h2 className="mb-4 font-heading text-3xl font-bold tracking-tight">
+      {/* Call to Action Section */}
+      <section className="bg-primary text-primary-foreground py-16">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <h2 className="mb-6 font-heading text-4xl font-bold tracking-tight">
             Begin Your Journey in Immersive Technologies
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
-            Take the first step toward a career at the forefront of immersive technologies. Apply now or contact our
-            admissions team to learn more about our programs. Enjoy a 50% discount on all courses for our first batches!
+          <p className="mx-auto mb-8 max-w-2xl">
+            Take the first step toward a career at the forefront of immersive technologies. Apply now or contact our admissions team to learn more about our programs. Enjoy a 50% discount on all courses for our first batches!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/admissions">
-              <Button variant="outline" className="text-lg">
+            <Button
+              asChild
+              className="h-12 rounded-full bg-background text-foreground px-6 py-3 text-sm font-medium transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <Link href="/apply">
+                Apply Now
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-12 rounded-full border border-background bg-transparent text-background px-6 py-3 text-sm font-medium transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <Link href="/admissions">
                 Contact Admissions
-              </Button>
-            </Link>
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Sticky CTA Button */}
+      <a
+        href="/apply"
+        className="fixed bottom-6 right-6 z-50 flex h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
+      >
+        Apply Now
+        <ChevronRight className="ml-2 h-4 w-4" />
+      </a>
     </div>
   );
 }
