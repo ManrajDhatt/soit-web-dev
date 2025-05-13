@@ -72,12 +72,12 @@ export default function CoursePage({ params }: Props) {
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             {course.description}
           </p>
-          <Button
+          {/* <Button
             asChild
             className="mt-6 bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20"
           >
             <Link href={`/apply?course=${course.slug}`}>Apply Now</Link>
-          </Button>
+          </Button> */}
         </div>
       </section>
 
@@ -335,12 +335,12 @@ export default function CoursePage({ params }: Props) {
         <p className="mx-auto mb-6 max-w-xl text-muted-foreground">
           Enroll in {course.title} and take the first step toward a career in immersive technologies.
         </p>
-        <Button
+        {/* <Button
           asChild
           className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20"
         >
           <Link href={`/apply?course=${course.slug}`}>Apply Now</Link>
-        </Button>
+        </Button> */}
       </section>
     </div>
   );

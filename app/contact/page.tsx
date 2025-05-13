@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/contact-form";
 import { Metadata } from "next";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Contact Us | School of Immersive Technologies",
@@ -29,23 +30,23 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-heading text-lg font-medium">Address</h3>
                   <address className="mt-2 not-italic text-muted-foreground">
-                    School of Immersive Technologies<br />
-                    Munjal BCU Centre of Innovation & Entrepreneurship<br />
-                    Ludhiana,Punjab,India
+                    MBCIE,
+                    BCM Campus,Sector 32A, Urban Estate,Chandigarh Road, Ludhiana-141001
+
                   </address>
                 </div>
                 
                 <div>
                   <h3 className="font-heading text-lg font-medium">Phone</h3>
                   <p className="mt-2 text-muted-foreground">
-                    +91 1234567890
+                    +91 9041990400
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="font-heading text-lg font-medium">Email</h3>
                   <p className="mt-2 text-muted-foreground">
-                    info@immersivetech.edu
+                    addmission@mbcie.org
                   </p>
                 </div>
                 
@@ -61,7 +62,7 @@ export default function ContactPage() {
               
               <div className="mt-8">
                 <h3 className="mb-4 font-heading text-lg font-medium">Connect With Us</h3>
-                <div className="flex space-x-4">
+                {/* <div className="flex space-x-4">
                   {['twitter', 'facebook', 'instagram', 'linkedin'].map((social) => (
                     <a
                       key={social}
@@ -79,7 +80,22 @@ export default function ContactPage() {
                       </svg>
                     </a>
                   ))}
-                </div>
+                </div> */}
+                <div className="flex space-x-4">
+  {[
+    { name: "instagram", icon: <FaInstagram /> },
+    { name: "linkedin", icon: <FaLinkedin /> },
+  ].map((social) => (
+    <a
+      key={social.name}
+      href="#"
+      className="flex h-10 w-10 items-center justify-center rounded-full  text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+    >
+      <span className="sr-only">{social.name}</span>
+      <div className="h-5 w-4">{social.icon}</div>
+    </a>
+  ))}
+</div>
               </div>
             </div>
             
@@ -91,8 +107,8 @@ export default function ContactPage() {
               </p>
               <div className="mt-4">
                 <div className="font-medium">Admissions Office</div>
-                <div className="text-muted-foreground">admissions@immersivetech.edu</div>
-                <div className="text-muted-foreground">+91 9876543210</div>
+                <div className="text-muted-foreground">admission@mbcie.org</div>
+                <div className="text-muted-foreground">+91 9041990400</div>
               </div>
             </div>
           </div>
@@ -107,9 +123,19 @@ export default function ContactPage() {
           <div className="relative h-[400px] overflow-hidden rounded-lg border border-border">
             {/* This would be replaced with an actual map component */}
             <div className="absolute inset-0 flex items-center justify-center bg-muted">
-              <p className="text-center text-muted-foreground">
+              {/* <p className="text-center text-muted-foreground">
                 Interactive Map Would Be Embedded Here
-              </p>
+              </p> */}
+              <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.221557148216!2d75.89804407538028!3d30.90843067449995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39100897830bf07d%3A0xa417c3fbf70c920d!2sMunjal%20Birmingham%20City%20University%20Centre%20of%20Innovation%20and%20Entrepreneurship!5e0!3m2!1sen!2sin!4v1747130644332!5m2!1sen!2sin"
+  width="1050"
+  height="400"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
             
 
             </div>

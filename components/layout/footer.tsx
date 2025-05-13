@@ -123,21 +123,21 @@ export function Footer() {
             <h3 className="font-heading text-lg font-semibold">Contact Us</h3>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start">
-                <MapPin className="mr-2 h-5 w-5 text-primary" />
+                <MapPin className="mr-2 h-7 w-8 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  Munjal BCU Centre of Innovation & Entrepreneurship, Ludhiana, Punjab, India
+                  MBCIE,BCM Campus,Sector 32A, Urban Estate,Chandigarh Road, Ludhiana-141001
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  +91 1234567890
+                  +91 90419-90400
                 </span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  info@immersivetech.edu
+                  admission@mbcie.org
                 </span>
               </li>
             </ul>

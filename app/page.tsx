@@ -28,8 +28,11 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:pt-32">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="flex flex-col items-start">
-              <div className="mb-6 inline-flex rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
+              <div className="mb-4 inline-flex rounded-full bg-primary/10 px-3 text-sm text-primary">
                 Pioneering the future of education
+              </div>
+              <div className="mb-1 inline-flex px-3 text-sm text-gray-900 dark:text-gray-50">
+              An initiative by Munjal Family, Hero Group
               </div>
               <h1 className="mb-6 font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 <span className="text-glow bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
@@ -225,11 +228,11 @@ export default function Home() {
               Take the first step towards a career in immersive technologies. Apply now for our upcoming session and become part of the innovation revolution.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20">
+              {/* <Button className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20">
               <Link href="/courses">Apply Now</Link>
 
             
-              </Button>
+              </Button> */}
               <Button variant="outline" className="text-lg">
                 Download Brochure
               </Button>
