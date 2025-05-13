@@ -773,15 +773,13 @@
 //     </div>
 //   );
 // }
-
-// app/courses/[courseSlug]/page.tsx
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { courses, Course } from "@/lib/courses";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, ChevronRight, Star, Quote, Award, BookOpen, Target } from "lucide-react";
+import { Clock, Users, Star, Quote, Award, BookOpen, CheckCircle, Briefcase, GraduationCap, ChevronRight } from "lucide-react";
 
 interface Props {
   params: { courseSlug: string };
@@ -828,31 +826,28 @@ export default function CoursePage({ params }: Props) {
 
   return (
     <div className="relative bg-background">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-background/80">
+      {/* Hero Section with Parallax */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-background/80">
         <div className="absolute inset-0 z-0">
           <Image
             src={course.image}
             alt={course.title}
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-40 parallax-bg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
-          <h1 className="mb-6 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl animate-fade-in-up">
+          <h1 className="mb-4 font-heading text-4xl font-bold text-foreground sm:text-5xl md:text-6xl ">
             {course.title}
           </h1>
-          <p className="mx-auto max-w-3xl text-lg text-muted-foreground sm:text-xl animate-fade-in-up animation-delay-200">
+          <p className="mx-auto max-w-3xl text-lg text-muted-foreground sm:text-xl ">
             {course.description}
           </p>
-          <div className="mt-8 flex justify-center gap-4 animate-fade-in-up animation-delay-400">
-            {/* <Button
-              asChild
-              className="h-12 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <Link href={`/apply?course=${course.slug}`}>Apply Now</Link>
-            </Button> */}
+          <p className="mt-4 text-sm text-muted-foreground/80 ">
+            Dive into the world of immersive technologies with hands-on learning and industry-ready skills.
+          </p>
+          <div className="mt-6 flex justify-center gap-4 fade-in-up animation-delay-400">
             <Button
               asChild
               variant="outline"
@@ -865,147 +860,54 @@ export default function CoursePage({ params }: Props) {
       </section>
 
       {/* Course Overview Section */}
-      <section className="container mx-auto px-4 py-16 sm:px-6">
+      <section className="container mx-auto px-4 py-12 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
             Course Overview
           </h2>
           <div className="grid gap-6 sm:grid-cols-3 mb-12">
-            <div className="bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-primary/10 rounded-full mr-4">
-                  <Clock className="h-6 w-6 text-primary" />
+            {[
+              { icon: Clock, title: "Duration", value: course.duration, desc: "Flexible learning pace with expert guidance." },
+              { icon: Users, title: "Intake", value: course.intake, desc: "Limited seats for personalized attention." },
+              { icon: Star, title: "Fees", value: course.fees, desc: "Affordable pricing with scholarship options." },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1 bg-gradient-to-br from-primary/5 to-background scale-in"
+                style={{ animationDelay: `${index * 100 + 200}ms` }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="p-3 bg-primary/10 rounded-full mr-4">
+                    <item.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-medium">{item.title}</h3>
                 </div>
-                <h3 className="text-lg font-medium">Duration</h3>
+                <p className="text-muted-foreground font-semibold">{item.value}</p>
+                <p className="text-sm text-muted-foreground mt-2">{item.desc}</p>
               </div>
-              <p className="text-muted-foreground">{course.duration}</p>
-            </div>
-            <div className="bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-primary/10 rounded-full mr-4">
-                  <Users className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-medium">Intake</h3>
-              </div>
-              <p className="text-muted-foreground">{course.intake}</p>
-            </div>
-            <div className="bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-primary/10 rounded-full mr-4">
-                  <Star className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-medium">Fees</h3>
-              </div>
-              <p className="text-muted-foreground">{course.fees}</p>
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Fee Structure for B.Voc. in Multimedia and Animation */}
-          {isBVocMultimedia && (
-            <div className="mt-12">
-              <h3 className="mb-6 text-center font-heading text-2xl font-semibold text-foreground">
-                Fee Structure (B.Voc. in Multimedia)
-              </h3>
-              <div className="overflow-x-auto rounded-xl shadow-lg border border-border">
-                <table className="w-full border-collapse bg-card">
-                  <thead>
-                    <tr className="bg-muted">
-                      <th className="border border-border px-4 py-3 text-left text-sm font-medium text-foreground">
-                        Sr. No.
-                      </th>
-                      <th className="border border-border px-4 py-3 text-left text-sm font-medium text-foreground">
-                        Semester
-                      </th>
-                      <th className="border border-border px-4 py-3 text-left text-sm font-medium text-foreground">
-                        Registration
-                      </th>
-                      <th className="border border-border px-4 py-3 text-left text-sm font-medium text-foreground">
-                        Tuition Fee
-                      </th>
-                      <th className="border border-border px-4 py-3 text-left text-sm font-medium text-foreground">
-                        Exam Fee
-                      </th>
-                      <th className="border border-border px-4 py-3 text-left text-sm font-medium text-foreground">
-                        Total (INR)
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">I</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">2000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">25000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1500</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">28,500</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">2</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">II</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">-</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">25000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1500</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">26,500</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">3</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">III</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">-</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">25000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1500</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">26,500</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">4</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">IV</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">-</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">25000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1500</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">26,500</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">5</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">V</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">-</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">25000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1500</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">26,500</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">6</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">VI</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">-</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">25000</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">1500</td>
-                      <td className="border border-border px-4 py-3 text-muted-foreground">26,500</td>
-                    </tr>
-                    <tr className="font-semibold bg-muted">
-                      <td className="border border-border px-4 py-3">-</td>
-                      <td className="border border-border px-4 py-3">TOTAL</td>
-                      <td className="border border-border px-4 py-3">2000</td>
-                      <td className="border border-border px-4 py-3">150000</td>
-                      <td className="border border-border px-4 py-3">9000</td>
-                      <td className="border border-border px-4 py-3">1,61,000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
-
-          {/* Program Highlights */}
-          <div className="mt-12">
-            <h3 className="mb-6 text-center font-heading text-2xl font-semibold text-foreground">
-              Program Highlights
-            </h3>
-            <div className="grid gap-4 sm:grid-cols-2">
+      {/* Program Highlights Section */}
+      <section className="bg-muted/30 py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
+              Why Choose This Program?
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2">
               {course.highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-3 rounded-xl bg-card p-4 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1"
+                  className="flex items-start gap-4 rounded-xl bg-card p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl scale-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <ChevronRight className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                  <span className="text-muted-foreground">{highlight}</span>
+                  <div className="p-2 bg-primary/10 rounded-full">
+                    <CheckCircle className="h-6 w-6 text-primary" />
+                  </div>
+                  <span className="text-foreground font-medium">{highlight}</span>
                 </div>
               ))}
             </div>
@@ -1015,53 +917,38 @@ export default function CoursePage({ params }: Props) {
 
       {/* About B.Voc. Section (Only for B.Voc. Course) */}
       {isBVocMultimedia && (
-        <section className="bg-muted/30 py-16">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
-                About B.Voc. Program
-              </h2>
-              <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
-                <p className="text-muted-foreground mb-6">
-                  The Bachelor of Vocation (B.Voc.) program, launched by the University Grants Commission (UGC), focuses on skill development within higher education. It offers a flexible structure with multiple exit points—Diploma after 1 year, Advanced Diploma after 2 years, and a B.Voc. Degree after 3 years—aligned with the National Skills Qualifications Framework (NSQF). This ensures graduates are work-ready at each stage, equipped to contribute to India’s economy through employment, entrepreneurship, or innovation.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  At SOIT, the B.Voc. in Multimedia and Animation is offered in collaboration with Lingaya’s Vidyapeeth School of Vocational Training (LV-SVS). The program integrates practical skills with general education, preparing students for global careers in animation, VFX, gaming, and immersive technologies like AR/VR/MR.
-                </p>
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="bg-muted/50 rounded-xl p-6 shadow-inner">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-primary/10 rounded-full mr-4">
-                        <Award className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="text-lg font-medium">NSQF Levels & Awards</h3>
-                    </div>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-start">
-                        <ChevronRight className="h-5 w-5 text-primary mt-1 mr-2 flex-shrink-0" />
-                        Diploma (1 Year) - NSQF Level 5
+        <section className="container mx-auto px-4 py-12 sm:px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
+              Discover the B.Voc. in Multimedia & Animation
+            </h2>
+            <div className="bg-card rounded-xl p-8 shadow-lg border border-border fade-in-up animation-delay-200">
+              <div className="grid gap-8 lg:grid-cols-2">
+                <div className="slide-in-left">
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">A Program Designed for Success</h3>
+                  <p className="text-muted-foreground mb-4">
+                    The <span className="font-semibold text-primary">B.Voc. in Multimedia and Animation</span> at the School of Immersive Technologies (SOIT) is a UGC-approved program crafted to develop industry-ready professionals. Offered in collaboration with <span className="font-semibold">Lingaya’s Vidyapeeth School of Vocational Training (LV-SVS)</span>, this program combines practical skills with theoretical knowledge, preparing you for global careers in animation, VFX, gaming, and immersive technologies like AR/VR/MR.
+                  </p>
+                  <p className="text-muted-foreground mb-4">
+                    With affiliations to esteemed institutions like <span className="font-semibold">Birmingham University</span>, we ensure a curriculum that meets international standards. Choose between <span className="font-semibold">online</span> and <span className="font-semibold">offline</span> learning modes to suit your needs, with hands-on training in state-of-the-art labs.
+                  </p>
+                </div>
+                <div className="bg-muted/50 rounded-xl p-6 shadow-inner slide-in-right">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">Flexible Learning Pathway</h3>
+                  <p className="text-muted-foreground mb-4">
+                    The B.Voc. program offers multiple exit points aligned with the National Skills Qualifications Framework (NSQF):
+                  </p>
+                  <ul className="space-y-3 text-muted-foreground">
+                    {["Diploma (1 Year) - NSQF Level 5", "Advanced Diploma (2 Years) - NSQF Level 6", "B.Voc. Degree (3 Years) - NSQF Level 7"].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3 slide-in-right" style={{ animationDelay: `${index * 100 + 200}ms` }}>
+                        <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        {item}
                       </li>
-                      <li className="flex items-start">
-                        <ChevronRight className="h-5 w-5 text-primary mt-1 mr-2 flex-shrink-0" />
-                        Advanced Diploma (2 Years) - NSQF Level 6
-                      </li>
-                      <li className="flex items-start">
-                        <ChevronRight className="h-5 w-5 text-primary mt-1 mr-2 flex-shrink-0" />
-                        B.Voc. Degree (3 Years) - NSQF Level 7
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="bg-muted/50 rounded-xl p-6 shadow-inner">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-primary/10 rounded-full mr-4">
-                        <BookOpen className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="text-lg font-medium">Assessment</h3>
-                    </div>
-                    <p className="text-muted-foreground">
-                      Examinations are conducted by Lingaya’s Vidyapeeth, with skill components assessed in collaboration with Sector Skill Councils (NSDC). Practical assessments use designated industry assessors to ensure real-world relevance.
-                    </p>
-                  </div>
+                    ))}
+                  </ul>
+                  <p className="text-muted-foreground mt-4 slide-in-right animation-delay-500">
+                    Assessments are conducted by Lingaya’s Vidyapeeth, with skill components evaluated by Sector Skill Councils (NSDC) using industry assessors for real-world relevance.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1069,18 +956,71 @@ export default function CoursePage({ params }: Props) {
         </section>
       )}
 
+      {/* Fee Structure for B.Voc. in Multimedia and Animation */}
+      {isBVocMultimedia && (
+        <section className="bg-muted/30 py-12">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
+                Fee Structure (B.Voc. in Multimedia)
+              </h2>
+              <div className="overflow-x-auto rounded-xl shadow-lg border border-border fade-in-up animation-delay-200">
+                <table className="w-full border-collapse bg-card">
+                  <thead>
+                    <tr className="bg-blue-500 text-primary-foreground">
+                      <th className="border border-border px-4 py-3 text-left text-sm font-medium">Sr. No.</th>
+                      <th className="border border-border px-4 py-3 text-left text-sm font-medium">Semester</th>
+                      <th className="border border-border px-4 py-3 text-left text-sm font-medium">Registration</th>
+                      <th className="border border-border px-4 py-3 text-left text-sm font-medium">Tuition Fee</th>
+                      <th className="border border-border px-4 py-3 text-left text-sm font-medium">Exam Fee</th>
+                      <th className="border border-border px-4 py-3 text-left text-sm font-medium">Total (INR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { sr: "1", semester: "I", registration: "2000", tuition: "25000", exam: "1500", total: "28,500" },
+                      { sr: "2", semester: "II", registration: "-", tuition: "25000", exam: "1500", total: "26,500" },
+                      { sr: "3", semester: "III", registration: "-", tuition: "25000", exam: "1500", total: "26,500" },
+                      { sr: "4", semester: "IV", registration: "-", tuition: "25000", exam: "1500", total: "26,500" },
+                      { sr: "5", semester: "V", registration: "-", tuition: "25000", exam: "1500", total: "26,500" },
+                      { sr: "6", semester: "VI", registration: "-", tuition: "25000", exam: "1500", total: "26,500" },
+                      { sr: "-", semester: "TOTAL", registration: "2000", tuition: "150000", exam: "9000", total: "1,61,000" },
+                    ].map((row, index) => (
+                      <tr
+                        key={index}
+                        className={index === 6 ? "font-semibold bg-muted slide-in-left" : "hover:bg-muted/50 slide-in-left"}
+                        style={{ animationDelay: `${index * 50 + 300}ms` }}
+                      >
+                        <td className="border border-border px-4 py-3 text-muted-foreground">{row.sr}</td>
+                        <td className="border border-border px-4 py-3 text-muted-foreground">{row.semester}</td>
+                        <td className="border border-border px-4 py-3 text-muted-foreground">{row.registration}</td>
+                        <td className="border border-border px-4 py-3 text-muted-foreground">{row.tuition}</td>
+                        <td className="border border-border px-4 py-3 text-muted-foreground">{row.exam}</td>
+                        <td className="border border-border px-4 py-3 text-muted-foreground">{row.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Curriculum Section */}
-      <section className="container mx-auto px-4 py-16 sm:px-6">
+      <section className="container mx-auto px-4 py-12 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
-            Curriculum
+          <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
+            What You’ll Learn
           </h2>
           {course.curriculum && course.curriculum.length > 0 ? (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {course.curriculum.map((item, index) => (
                 <div
                   key={index}
-                  className="group relative rounded-xl bg-card shadow-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                  className="group relative rounded-xl bg-card shadow-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl scale-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative h-48">
                     {item.image ? (
@@ -1095,20 +1035,22 @@ export default function CoursePage({ params }: Props) {
                         <p className="text-muted-foreground">Image Coming Soon</p>
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-foreground mb-2">
                       {item.module}: {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4">Duration: {item.duration}</p>
+                    <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-primary" /> Duration: {item.duration}
+                    </p>
                     {item.subjects && Array.isArray(item.subjects) && item.subjects.length > 0 && (
                       <>
-                        <h4 className="text-lg font-medium text-foreground mb-2">Subjects Covered:</h4>
+                        <h4 className="text-lg font-medium text-foreground mb-3">Subjects Covered:</h4>
                         <ul className="space-y-2 text-muted-foreground">
                           {item.subjects.map((subject: string, sIndex: number) => (
-                            <li key={sIndex} className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                            <li key={sIndex} className="flex items-start gap-2 slide-in-right" style={{ animationDelay: `${sIndex * 50}ms` }}>
+                              <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                               {subject}
                             </li>
                           ))}
@@ -1117,8 +1059,11 @@ export default function CoursePage({ params }: Props) {
                     )}
                     {item.practical && (
                       <>
-                        <h4 className="text-lg font-medium text-foreground mt-4 mb-2">Practical Component:</h4>
-                        <div className="text-muted-foreground">{item.practical}</div>
+                        <h4 className="text-lg font-medium text-foreground mt-4 mb-3">Practical Component:</h4>
+                        <div className="text-muted-foreground flex items-start gap-2 slide-in-right animation-delay-200">
+                          <Briefcase className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                          {item.practical}
+                        </div>
                       </>
                     )}
                   </div>
@@ -1126,7 +1071,7 @@ export default function CoursePage({ params }: Props) {
               ))}
             </div>
           ) : (
-            <div className="rounded-xl bg-card p-6 shadow-lg border border-border text-center">
+            <div className="rounded-xl bg-card p-6 shadow-lg border border-border text-center fade-in-up">
               <p className="text-muted-foreground">Curriculum details coming soon.</p>
             </div>
           )}
@@ -1134,17 +1079,17 @@ export default function CoursePage({ params }: Props) {
       </section>
 
       {/* Future Scope and Opportunities Section */}
-      <section className="bg-muted/30 py-16">
+      <section className="bg-muted/30 py-12">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
               Future Scope and Opportunities
             </h2>
-            <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
-              <p className="text-muted-foreground mb-6">{course.futureScope}</p>
+            <div className="bg-card rounded-xl p-8 shadow-lg border border-border fade-in-up animation-delay-200">
+              <p className="text-muted-foreground mb-6 slide-in-left">{course.futureScope}</p>
               {isBVocMultimedia && (
                 <>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">Career Roles:</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-4 slide-in-left animation-delay-300">Career Roles You Can Pursue:</h3>
                   <div className="grid gap-4 sm:grid-cols-2">
                     {[
                       "2D/3D Animator",
@@ -1156,10 +1101,11 @@ export default function CoursePage({ params }: Props) {
                     ].map((role, index) => (
                       <div
                         key={index}
-                        className="flex items-start gap-3 rounded-xl bg-muted/50 p-4 transition-transform duration-300 hover:-translate-y-1"
+                        className="flex items-center gap-3 rounded-xl bg-muted/50 p-4 transition-transform duration-300 hover:-translate-y-1 hover:bg-muted slide-in-right"
+                        style={{ animationDelay: `${index * 100}ms` }}
                       >
-                        <ChevronRight className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <span className="text-muted-foreground">{role}</span>
+                        <Briefcase className="h-5 w-5 text-primary flex-shrink-0" />
+                        <span className="text-foreground font-medium">{role}</span>
                       </div>
                     ))}
                   </div>
@@ -1171,20 +1117,21 @@ export default function CoursePage({ params }: Props) {
       </section>
 
       {/* Faculty Section */}
-      <section className="container mx-auto px-4 py-16 sm:px-6">
+      <section className="container mx-auto px-4 py-12 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
             Meet Your Instructors
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {course.faculty.map((instructor, index) => (
+          <div className="grid gap-6 sm:grid-cols-2 justify-items-center">
+            {course.faculty.slice(0, 2).map((instructor, index) => (
               <div
                 key={index}
-                className="bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1"
+                className="bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1 max-w-sm scale-in"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="relative h-32 w-32 mx-auto rounded-full overflow-hidden mb-4">
                   <Image
-                    src={instructor.image}
+                    src="/placeholder.jpg"
                     alt={instructor.name}
                     fill
                     className="object-cover"
@@ -1201,46 +1148,67 @@ export default function CoursePage({ params }: Props) {
       </section>
 
       {/* Alumni Support Section */}
-      <section className="bg-muted/30 py-16">
+      <section className="bg-muted/30 py-12">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
               Alumni Support
             </h2>
-            <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
-              <p className="text-muted-foreground">{course.alumniSupport}</p>
+            <div className="bg-card rounded-xl p-8 shadow-lg border border-border fade-in-up animation-delay-200">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-primary/10 rounded-full">
+                  <GraduationCap className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <p className="text-muted-foreground mb-4 slide-in-left">{course.alumniSupport}</p>
+                  <p className="text-muted-foreground italic slide-in-left animation-delay-300">
+                    "Our alumni network connects you with industry leaders and provides lifelong support for your career growth." – SOIT Alumni Team
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Industry Internships Section */}
-      <section className="container mx-auto px-4 py-16 sm:px-6">
+      <section className="container mx-auto px-4 py-12 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
             Industry Internships
           </h2>
-          <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
-            <p className="text-muted-foreground">{course.industryInternships}</p>
+          <div className="bg-card rounded-xl p-8 shadow-lg border border-border fade-in-up animation-delay-200">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-primary/10 rounded-full">
+                <Briefcase className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <p className="text-muted-foreground mb-4 slide-in-left">{course.industryInternships}</p>
+                <p className="text-muted-foreground italic slide-in-left animation-delay-300">
+                  "Gain real-world experience with top companies in animation, gaming, and immersive tech." – SOIT Career Services
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-muted/30 py-16">
+      <section className="bg-muted/30 py-12">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
               What Our Students Say
             </h2>
             <div className="grid gap-6 sm:grid-cols-2">
               {course.testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="relative bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1"
+                  className="relative bg-card rounded-xl p-6 shadow-lg border border-border transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl scale-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <Quote className="absolute top-4 right-4 h-6 w-6 text-primary opacity-20" />
-                  <p className="text-muted-foreground italic mb-4">"{testimonial.quote}"</p>
+                  <p className="text-muted-foreground italic mb-4">{testimonial.quote}</p>
                   <p className="font-medium text-foreground">{testimonial.author}</p>
                 </div>
               ))}
@@ -1251,16 +1219,17 @@ export default function CoursePage({ params }: Props) {
 
       {/* Related Courses Section */}
       {relatedCourses.length > 0 && (
-        <section className="container mx-auto px-4 py-16 sm:px-6">
+        <section className="container mx-auto px-4 py-12 sm:px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center font-heading text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="mb-10 text-center font-heading text-4xl font-bold tracking-tight text-foreground fade-in-up">
               Explore Related Courses
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedCourses.map((relatedCourse) => (
+              {relatedCourses.map((relatedCourse, index) => (
                 <div
                   key={relatedCourse.slug}
-                  className="group bg-card rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                  className="group bg-card rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl scale-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative h-48">
                     <Image
@@ -1269,7 +1238,7 @@ export default function CoursePage({ params }: Props) {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-semibold text-foreground mb-2">{relatedCourse.title}</h3>
@@ -1286,24 +1255,15 @@ export default function CoursePage({ params }: Props) {
       )}
 
       {/* Call to Action Section */}
-      <section className="bg-blue-400 text-primary-foreground py-16">
+      <section className="bg-blue-400 text-primary-foreground py-12">
         <div className="container mx-auto px-4 sm:px-6 text-center">
-          <h2 className="mb-6 font-heading text-4xl font-bold tracking-tight">
+          <h2 className="mb-6 font-heading text-4xl font-bold tracking-tight fade-in-up">
             Ready to Start Your Journey?
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl">
+          <p className="mx-auto mb-8 max-w-2xl fade-in-up animation-delay-200">
             Enroll in {course.title} and take the first step toward a career in immersive technologies.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {/* <Button
-              asChild
-              className="h-12 rounded-full bg-background text-foreground px-6 py-3 text-sm font-medium transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <Link href={`/apply?course=${course.slug}`}>
-                Apply Now
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button> */}
+          <div className="flex flex-wrap justify-center gap-4 fade-in-up animation-delay-400">
             <Button
               asChild
               variant="outline"
@@ -1317,15 +1277,6 @@ export default function CoursePage({ params }: Props) {
           </div>
         </div>
       </section>
-
-      {/* Sticky CTA Button */}
-      {/* <a
-        href="/apply"
-        className="fixed bottom-6 right-6 z-50 flex h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
-      >
-        Apply Now
-        <ChevronRight className="ml-2 h-4 w-4" />
-      </a> */}
     </div>
   );
 }

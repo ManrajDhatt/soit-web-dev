@@ -78,7 +78,7 @@ export function EnquireButton() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button
-          className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-md shadow-md transition-transform duration-700 animate-pulseGrow"
+          className="ml-4 px-6 py-2 bg-gradient-to-r from-primary to-blue-900 text-white font-bold rounded-md shadow-md transition-transform duration-700 animate-pulseGrow"
           aria-label="Enquire Now"
         >
           Enquire Now
