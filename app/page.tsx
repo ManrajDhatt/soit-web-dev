@@ -46,7 +46,7 @@ export default function Home() {
       asChild
       className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20 z-10"
     >
-      <Link href="/programs">Explore Programs</Link>
+      <Link href="/courses">Explore Courses</Link>
     </Button>
                 {/* <Button variant="outline" className="text-lg">
                   Take a Virtual Tour
@@ -120,14 +120,14 @@ export default function Home() {
         <div className="mb-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div>
             <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Our Programs
+              Our Courses
             </h2>
             <p className="mt-4">
               Specialized courses designed to prepare you for the future of technology
             </p>
           </div>
-          <Button className="bg-gradient-to-r from-blue-800 to-blue-300 text-lg hover:shadow-lg hover:shadow-accent/20">
-            <Link href="/programs">View All Programs</Link>
+          <Button className="bg-gradient-to-r from-blue-700 to-black text-lg hover:shadow-lg hover:shadow-accent/20">
+            <Link href="/courses">View All Programs</Link>
           </Button>
           {/* <RotatingGlowButton/> */}
         </div>
@@ -154,7 +154,7 @@ export default function Home() {
             return (
               <Link
                 key={index}
-                href={`/programs?program=${slug}`}
+                href={`/courses?program=${slug}`}
                 className="group relative overflow-hidden rounded-lg border border-border transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20"
               >
                 <div className="relative h-[200px] w-full overflow-hidden">
@@ -187,17 +187,8 @@ export default function Home() {
       <StatsSection />
       
       {/* Testimonials */}
-      <section className="bg-background py-24">
+      <section className="bg-background py-1">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <h2 className="mb-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Student Experiences
-            </h2>
-            <p className="text-muted-foreground">
-              Hear from our students about their journey in immersive technologies
-            </p>
-          </div>
-          
           <TestimonialCarousel />
         </div>
       </section>

@@ -319,7 +319,7 @@ export default function CoursePage({ params }: Props) {
                   {relatedCourse.description}
                 </p>
                 <Button asChild variant="outline" className="mt-4 w-full">
-                  <Link href={`/programs/${relatedCourse.slug}`}>Learn More</Link>
+                  <Link href={`/courses/${relatedCourse.slug}`}>Learn More</Link>
                 </Button>
               </div>
             ))}

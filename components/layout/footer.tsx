@@ -66,20 +66,20 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/programs" className="text-muted-foreground hover:text-foreground">
-                  Programs
+                <Link href="/courses" className="text-muted-foreground hover:text-foreground">
+                  Courses
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/vision-mission" className="text-muted-foreground hover:text-foreground">
                   Vision & Mission
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link href="/directors-message" className="text-muted-foreground hover:text-foreground">
                   Director's Message
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground">
                   Contact

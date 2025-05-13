@@ -1,8 +1,6 @@
 
-
 // app/apply/page.tsx
 "use client";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -178,7 +176,7 @@ export default function ApplyPage() {
 
   // Group courses by category for dropdown
   const courseCategories = [
-    { category: "degree", label: "Degree Programs" },
+    { category: "degree", label: "Degree Courses" },
     { category: "diploma", label: "Diploma Courses" },
     { category: "advanced-diploma", label: "Advanced Diploma Courses" },
     { category: "short-term", label: "Short-Term & Specialized Courses" },
@@ -561,7 +559,7 @@ export default function ApplyPage() {
                                 size="sm"
                                 className="mt-2 w-full"
                               >
-                                <Link href={`/programs/${course.slug}`}>Learn More</Link>
+                                <Link href={`/courses/${course.slug}`}>Learn More</Link>
                               </Button>
                             </CardContent>
                           </Card>

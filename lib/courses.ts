@@ -978,58 +978,82 @@ export interface Course {
   export const courses: Course[] = [
     // Degree (1 course)
     {
-      slug: "b-voc-in-multimedia-and-animation",
-      title: "B.Voc. in Multimedia and Animation",
-      description:
-        "A comprehensive degree program covering multimedia, animation, and VFX, designed to build industry-ready professionals.",
-      duration: "3 Years",
-      intake: "July",
-      fees: "₹1,61,000 (Total)",
-      image: "https://subharti.bvocskill.com/img/courses/multimedia-animation.webp",
-      highlights: [
-        "Industry-aligned curriculum",
-        "Hands-on training with Maya and Blender",
-        "Real-world project experience",
-        "Career placement support",
-      ],
-      category: "degree",
-      curriculum: [
-        { module: "Semester 1", title: "Fundamentals of Animation", duration: "16 weeks" },
-        { module: "Semester 2", title: "3D Modeling and Texturing", duration: "16 weeks" },
-        { module: "Semester 3", title: "VFX and Compositing", duration: "16 weeks" },
-        { module: "Semester 4", title: "Game Design Basics", duration: "16 weeks" },
-        { module: "Semester 5", title: "Advanced Animation Techniques", duration: "16 weeks" },
-        { module: "Semester 6", title: "Capstone Project and Portfolio", duration: "16 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Dr. Anita Sharma",
-          role: "Program Director",
-          image: "/images/faculty/anita-sharma.jpg",
-        },
-        {
-          name: "Mr. Rajesh Kumar",
-          role: "Animation Expert",
-          image: "/images/faculty/rajesh-kumar.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "This program gave me the skills to land a job at a top animation studio!",
-          author: "Priya M., Alumna",
-        },
-        {
-          quote: "The faculty's guidance and industry projects were game-changers.",
-          author: "Arjun S., Alumnus",
-        },
-      ],
-      futureScope:
-        "Graduates can pursue roles like 3D Animator, VFX Artist, Game Designer, or Multimedia Specialist in film, gaming, and advertising industries. The demand for skilled animators is growing with OTT platforms and VR/AR technologies.",
-      alumniSupport:
-        "Our alumni network offers mentorship, job referrals, and exclusive workshops. Graduates can join our annual alumni meet to connect with industry leaders.",
-      industryInternships:
-        "6-month internships with partners like Red Chillies Entertainment and Technicolor, working on live projects in animation and VFX.",
-    },
+    slug: "b-voc-in-multimedia-and-animation",
+    title: "B.Voc. in Multimedia and Animation",
+    description:
+      "A comprehensive degree program covering multimedia, animation, and VFX, designed to build industry-ready professionals.",
+    duration: "3 Years",
+    intake: "July",
+    fees: "₹1,61,000 (Total)",
+    image: "https://subharti.bvocskill.com/img/courses/multimedia-animation.webp",
+    highlights: [
+      "Industry-aligned curriculum",
+      "Hands-on training with Maya and Blender",
+      "Real-world project experience",
+      "Career placement support",
+    ],
+    category: "degree",
+    curriculum: [
+      {
+        module: "Semester 1",
+        title: "Fundamentals of Computer, Basics of Drawing, Photoshop, Adobe Illustrations, General English & Soft Skills",
+        duration: "16 weeks",
+      },
+      {
+        module: "Semester 2",
+        title: "Internet Web Application, Media Organization, Pre-Production & Audio Editing, Video Editing, Publication Design",
+        duration: "16 weeks",
+      },
+      {
+        module: "Semester 3",
+        title: "Computer Graphics, Advance Web Designing, Adobe Flash, Programming Concepts & C Language, Environment Science",
+        duration: "16 weeks",
+      },
+      {
+        module: "Semester 4",
+        title: "Basics of Accounting, Principles of Animation, 3D Modeling, Texturing and Rigging, Advanced Communication & Soft Skills",
+        duration: "16 weeks",
+      },
+      {
+        module: "Semester 5",
+        title: "Data Processing & DBMS, Media Ethics, BG/Props/Character Modelling, Cell Animation, Character Animation",
+        duration: "16 weeks",
+      },
+      {
+        module: "Semester 6",
+        title: "Entrepreneurship Development, 3D Animation, Customer Relationship Management, Material/Camera/Light Concepts, Advance VFX, Project",
+        duration: "16 weeks",
+      },
+    ],
+    faculty: [
+      {
+        name: "Dr. Anita Sharma",
+        role: "Program Director",
+        image: "/images/faculty/anita-sharma.jpg",
+      },
+      {
+        name: "Mr. Rajesh Kumar",
+        role: "Animation Expert",
+        image: "/images/faculty/rajesh-kumar.jpg",
+      },
+    ],
+    testimonials: [
+      {
+        quote: "This program gave me the skills to land a job at a top animation studio!",
+        author: "Priya M., Alumna",
+      },
+      {
+        quote: "The faculty's guidance and industry projects were game-changers.",
+        author: "Arjun S., Alumnus",
+      },
+    ],
+    futureScope:
+      "Graduates can pursue roles like 3D Animator, VFX Artist, Game Designer, or Multimedia Specialist in film, gaming, and advertising industries. The demand for skilled animators is growing with OTT platforms and VR/AR technologies.",
+    alumniSupport:
+      "Our alumni network offers mentorship, job referrals, and exclusive workshops. Graduates can join our annual alumni meet to connect with industry leaders.",
+    industryInternships:
+      "6-month internships with partners like Red Chillies Entertainment and Technicolor, working on live projects in animation and VFX.",
+  },
   
     // Diploma (8 courses)
     {

@@ -13,8 +13,8 @@ import { Clock, Calendar, Award, Users, ChevronRight } from "lucide-react";
 import { courses } from "@/lib/courses";
 
 export const metadata: Metadata = {
-  title: "Programs | School of Immersive Technologies",
-  description: "Explore our cutting-edge programs in VR, AR, and immersive technologies at the School of Immersive Technologies.",
+  title: "Courses | School of Immersive Technologies",
+  description: "Explore our cutting-edge courses in VR, AR, and immersive technologies at the School of Immersive Technologies.",
 };
 
 // Function to create a URL-friendly slug from the course title
@@ -31,7 +31,7 @@ export default function ProgramsPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <h1 className="mb-4 font-heading text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Our Programs
+            Our Courses
           </h1>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Comprehensive education in immersive technologies to prepare you for the future of digital experiences
@@ -41,7 +41,7 @@ export default function ProgramsPage() {
         <Tabs defaultValue="diploma" className="mb-16">
           <div className="flex justify-center">
             <TabsList className="mb-8">
-              <TabsTrigger value="degree">Degree Programs</TabsTrigger>
+              <TabsTrigger value="degree">Degree Courses</TabsTrigger>
               <TabsTrigger value="diploma">Diploma Courses</TabsTrigger>
               <TabsTrigger value="advanced-diploma">Advanced Diploma</TabsTrigger>
               <TabsTrigger value="short-term">Short-Term & Specialized</TabsTrigger>
@@ -92,7 +92,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="pt-2">
-                      <Link href={`/programs/${program.slug}`}>
+                      <Link href={`/courses/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
                           {/* Apply Now */}
 
@@ -149,7 +149,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="pt-2">
-                      <Link href={`/programs/${program.slug}`}>
+                      <Link href={`/courses/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
                           View Details
                         </Button>
@@ -204,7 +204,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="pt-2">
-                      <Link href={`/programs/${program.slug}`}>
+                      <Link href={`/courses/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
                           View Details
                         </Button>
@@ -259,7 +259,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="pt-2">
-                      <Link href={`/programs/${program.slug}`}>
+                      <Link href={`/courses/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
                           View Details
                         </Button>
@@ -288,7 +288,7 @@ export default function ProgramsPage() {
               {
                 title: "Entrance Examination",
                 description:
-                  "Qualified applicants for degree and diploma programs will be invited to take a program-specific entrance examination assessing relevant knowledge and aptitude.",
+                  "Qualified applicants for degree and diploma courses will be invited to take a program-specific entrance examination assessing relevant knowledge and aptitude.",
                 icon: <Award className="h-6 w-6 text-primary-foreground" />,
               },
               {

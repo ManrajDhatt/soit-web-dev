@@ -27,11 +27,12 @@ import RotatingGlowButton from "../ui/RotatingGlowButton";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Programs", path: "/programs" },
+  { name: "Courses", path: "/courses" },
   // { name: "Vision & Mission", path: "/vision-mission" },
-  { name: "Director's Message", path: "/directors-message" },
+  // { name: "Director's Message", path: "/directors-message" },
   { name: "Contact", path: "/contact" },
 ];
+
 
 export function Navbar() {
   const pathname = usePathname();
