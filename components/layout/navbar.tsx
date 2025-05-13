@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Button } from "@/components/ui/button";
-import Image from 'next/image';
+import { EnquireButton } from "../ui/enquireNow";
 
 import {
   NavigationMenu,
@@ -17,28 +20,28 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Icons } from "@/components/layout/icons";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Icon, Menu } from "lucide-react";
-import { useTheme } from "next-themes";
-import { EnquireButton } from "../ui/enquireNow";
-import RotatingGlowButton from "../ui/RotatingGlowButton";
+import { Menu } from "lucide-react";
 
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Courses", path: "/courses" },
-  // { name: "Vision & Mission", path: "/vision-mission" },
-  // { name: "Director's Message", path: "/directors-message" },
   { name: "Contact", path: "/contact" },
 ];
-
 
 export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme } = useTheme();
+
+  // Prevent hydration mismatch
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,9 +50,14 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
- const logoSrc = theme === "light" ? "/logo.png" : "/logo_whitetext.png";
-  
- return (
+
+  const logoSrc = mounted
+    ? theme === "light"
+      ? "/logo.png"
+      : "/logo_whitetext.png"
+    : "/logo.png"; // Fallback to light during SSR
+
+  return (
     <header
       className={cn(
         "fixed top-2 z-50 w-full transition-all duration-300",
@@ -59,12 +67,17 @@ export function Navbar() {
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          {/* <Icons.logo className="h-8 w-8 text-primary" /> */}
-          <Image src={logoSrc} alt="Logo" width={300} height={150} />
-          {/* <span className="font-heading text-lg font-bold md:text-xl">
-            School Of Immersive Technologies
-          </span> */}
+          {mounted && (
+            <Image
+              src={logoSrc}
+              alt="Company Logo"
+              width={300}
+              height={150}
+              priority
+            />
+          )}
         </Link>
 
         {/* Desktop Navigation */}
@@ -89,13 +102,7 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <ThemeToggle />
-          {/* <Button className="ml-4 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-accent/20">
-          Enquire Now
-
-          </Button> */}
-          <EnquireButton/>
-
-          {/* <RotatingGlowButton/> */}
+          <EnquireButton />
         </nav>
 
         {/* Mobile Navigation */}
