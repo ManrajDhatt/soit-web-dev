@@ -226,70 +226,47 @@ export default function ApplyPage() {
         </div>
       )}
 
-      {/* Progress Stepper */}
-      {/* <div className="mb-12">
-        <div className="relative flex justify-between items-center">
-          <div className="absolute top-4 left-0 right-0 h-1 bg-muted z-0">
-            <div
-              className="h-full bg-primary transition-all duration-300"
-              style={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
-            />
-          </div>
-          {steps.map((step, index) => (
-            <div key={index} className="flex-1 text-center z-10">
-              <div
-                className={`mx-auto h-8 w-8 rounded-full flex items-center justify-center ${
-                  index <= currentStep ? "bg-primary text-white" : "bg-muted text-muted-foreground"
-                }`}
-              >
-                {index + 1}
-              </div>
-              <p className="mt-2 text-sm">{step}</p>
-            </div>
-          ))}
-        </div>
-      </div> */}
+        {/* Sticky Progress Stepper */}
+        <div className="sticky top-10 bg-background pt-10 pb-2 shadow-sm z-30">
+        <div className="container mx-auto px-4">
+            <div className="relative max-w-4xl mx-auto">
+            {/* Step circles */}
 
-{/* Sticky Progress Stepper */}
-<div className="sticky top-10 bg-background pt-10 pb-2 shadow-sm z-30">
-  <div className="container mx-auto px-4">
-    <div className="relative max-w-4xl mx-auto">
-      {/* Step circles */}
-      <div className="flex justify-between px-8">
-        {/* Creating a container for the line with padding */}
-        <div className="absolute top-4 w-full mb-9 ">
-          {/* Background line - positioned with padding */}
-          <div className="absolute h-1 bg-muted w-[80%] left-[5%]"></div>
-          
-          {/* Progress line - grows based on current step */}
-          <div 
-            className="absolute h-1 bg-primary transition-all duration-300" 
-            style={{ 
-              width: `${(currentStep / (steps.length - 1)) * 80}%`,
-              left: '5%'
-            }}
-          ></div>
-        </div>
-        
-        {/* Step indicators */}
-        {steps.map((step, index) => (
-          <div key={index} className="z-10 flex flex-col items-center">
-            <div
-              className={`h-8 w-8 rounded-full flex items-center justify-center ${
-                index <= currentStep ? "bg-primary text-white" : "bg-muted text-muted-foreground"
-              }`}
-            >
-              {index + 1}
+            <div className="flex justify-between px-8">
+                {/* Creating a container for the line with padding */}
+                <div className="absolute top-4 w-full mb-9 ">
+                {/* Background line - positioned with padding */}
+                <div className="absolute h-1 bg-muted w-[80%] left-[5%]"></div>
+                
+                {/* Progress line - grows based on current step */}
+                <div 
+                    className="absolute h-1 bg-primary transition-all duration-300" 
+                    style={{ 
+                    width: `${(currentStep / (steps.length - 1)) * 80}%`,
+                    left: '5%'
+                    }}
+                ></div>
+                </div>
+                
+                {/* Step indicators */}
+                {steps.map((step, index) => (
+                <div key={index} className="z-10 flex flex-col items-center">
+                    <div
+                    className={`h-8 w-8 rounded-full flex items-center justify-center ${
+                        index <= currentStep ? "bg-primary text-white" : "bg-muted text-muted-foreground"
+                    }`}
+                    >
+                    {index + 1}
+                    </div>
+                    <p className="mt-2 text-xs font-medium">
+                    {step}
+                    </p>
+                </div>
+                ))}
             </div>
-            <p className="mt-2 text-xs font-medium">
-              {step}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
+            </div>
+        </div>
+        </div>
       {/* Form Section */}
       <section className="mb-16">
         <Card className="mx-auto max-w-4xl mt-10">

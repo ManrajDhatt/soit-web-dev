@@ -1,0 +1,13 @@
+.rotating-glow-button {
+    background:
+      linear-gradient(rgb(37, 37, 78), rgb(15, 61, 22)) padding-box,
+      conic-gradient(from var(--angle, 0deg), transparent, white 10%, transparent 20%) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 9999px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    transition: background 0.3s ease;
+  }
+  

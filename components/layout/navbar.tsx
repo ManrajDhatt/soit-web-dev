@@ -21,12 +21,14 @@ import { Icons } from "@/components/layout/icons";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icon, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
+import { EnquireButton } from "../ui/enquireNow";
+import RotatingGlowButton from "../ui/RotatingGlowButton";
 
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Programs", path: "/programs" },
-  { name: "Vision & Mission", path: "/vision-mission" },
+  // { name: "Vision & Mission", path: "/vision-mission" },
   { name: "Director's Message", path: "/directors-message" },
   { name: "Contact", path: "/contact" },
 ];
@@ -86,10 +88,13 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <ThemeToggle />
-          <Button className="ml-4 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-accent/20">
-          <Link href="/apply">Apply Now</Link>
+          {/* <Button className="ml-4 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-accent/20">
+          Enquire Now
 
-          </Button>
+          </Button> */}
+          <EnquireButton/>
+
+          {/* <RotatingGlowButton/> */}
         </nav>
 
         {/* Mobile Navigation */}

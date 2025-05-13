@@ -75,6 +75,10 @@ const config: Config = {
         },
       },
       keyframes: {
+       'pulseGrow': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.08)' },
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -114,6 +118,7 @@ const config: Config = {
         typing: 'typing 3.5s steps(40, end)',
         'caret-blink': 'caret-blink 0.75s step-end infinite',
         shimmer: 'shimmer 2s infinite linear',
+        'pulseGrow': 'pulseGrow 3s ease-in-out infinite',
       },
     },
   },

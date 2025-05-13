@@ -21,6 +21,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'School of Immersive Technologies | Munjal BCU Centre',
   description: 'Pioneering education in AR, VR and immersive technologies',
+   icons: {
+    // icon:'/'
+    icon: '/favicon.png', // path relative to public/
+  },
 };
 
 export default function RootLayout({

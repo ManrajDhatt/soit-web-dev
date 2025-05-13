@@ -32,8 +32,7 @@
     --primary-foreground: 0 0% 98%;
 
     /* --secondary: linear-gradient(135deg, hsl(276, 100%, 55%), hsl(250, 100%, 70%), hsl(0, 0%, 10%)); */
---secondary:255,20%,20%,
-    /* Neon Purple */
+    --secondary: 255, 20%, 20%;                /* Adjusted for valid HSL */
     --secondary-foreground: 0 0% 98%;
 
     --accent: 231 36% 10%;                     /* Space Black / Navy */
@@ -187,39 +186,67 @@
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: float 8s ease-in-out infinite;
-}
-
-.animate-float-fast {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+@layer utilities {
+  /* Float Animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0);
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
   }
-  50% {
-    box-shadow: 0 0 20px 0 rgba(var(--accent-rgb), 0.4);
-  }
-}
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s infinite;
+  .animate-float-fast {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  /* Pulse Glow Animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0);
+    }
+    50% {
+      box-shadow: 0 0 20px 0 rgba(var(--accent-rgb), 0.4);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  /* Fade In Up Animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
 }

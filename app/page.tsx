@@ -7,6 +7,7 @@ import { TechnologyCard } from "@/components/tech-card";
 import { PartnerLogos } from "@/components/partner-logos";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { StatsSection } from "@/components/stats-section";
+import RotatingGlowButton from "@/components/ui/RotatingGlowButton";
 
 export default function Home() {
   const generateSlug = (title: string) =>
@@ -128,6 +129,7 @@ export default function Home() {
           <Button className="bg-gradient-to-r from-blue-800 to-blue-300 text-lg hover:shadow-lg hover:shadow-accent/20">
             <Link href="/programs">View All Programs</Link>
           </Button>
+          {/* <RotatingGlowButton/> */}
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
