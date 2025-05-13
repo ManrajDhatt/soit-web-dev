@@ -32,7 +32,7 @@ export default function ProgramsPage() {
       <section className="container mx-auto px-4 sm:px-6 mb-16">
         <Tabs defaultValue="diploma">
           <div className="flex justify-center mb-12">
-            <TabsList className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-xl">
+            <TabsList className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-xl mb-8">
               <TabsTrigger
                 value="degree"
                 className="flex-shrink-0 px-4 py-2 text-sm sm:text-base font-medium rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
@@ -269,7 +269,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-primary text-primary-foreground py-16">
+      <section className="bg-blue-400 text-primary-foreground py-16">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="mb-6 font-heading text-4xl font-bold tracking-tight">
             Begin Your Journey in Immersive Technologies
@@ -278,7 +278,7 @@ export default function ProgramsPage() {
             Take the first step toward a career at the forefront of immersive technologies. Apply now or contact our admissions team to learn more about our programs. Enjoy a 50% discount on all courses for our first batches!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button
+            {/* <Button
               asChild
               className="h-12 rounded-full bg-background text-foreground px-6 py-3 text-sm font-medium transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
@@ -286,7 +286,7 @@ export default function ProgramsPage() {
                 Apply Now
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
+            </Button> */}
             <Button
               asChild
               variant="outline"
@@ -302,13 +302,13 @@ export default function ProgramsPage() {
       </section>
 
       {/* Sticky CTA Button */}
-      <a
+      {/* <a
         href="/apply"
-        className="fixed bottom-6 right-6 z-50 flex h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
+        className="fixed bottom-6 right-6 z-50 flex h-12 items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
       >
         Apply Now
         <ChevronRight className="ml-2 h-4 w-4" />
-      </a>
+      </a> */}
     </div>
   );
 }

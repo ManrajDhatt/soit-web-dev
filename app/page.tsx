@@ -31,7 +31,7 @@ export default function Home() {
               <div className="mb-4 inline-flex rounded-full bg-primary/10 px-3 text-sm text-primary">
                 Pioneering the future of education
               </div>
-              <div className="mb-1 inline-flex px-3 text-sm text-gray-900 dark:text-gray-50">
+              <div className="mb-1 inline-flex px-1 text-sm text-gray-900 dark:text-gray-50">
               An initiative by Munjal Family, Hero Group
               </div>
               <h1 className="mb-6 font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
