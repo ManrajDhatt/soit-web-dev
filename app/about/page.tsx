@@ -615,7 +615,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 flex justify-center gap-4 animate-fade-in-up animation-delay-400">
             <a
-              href="/courses"
+              href="/courses/b-voc-in-multimedia-and-animation"
               className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               Explore Courses

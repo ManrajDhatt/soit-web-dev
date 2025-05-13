@@ -282,7 +282,6 @@ export function TestimonialCarousel() {
         <div className="absolute -bottom-8 -left-8 h-16 w-16 rounded-full bg-primary/10 blur-xl"></div>
         <div className="absolute -top-8 -right-8 h-16 w-16 rounded-full bg-accent/10 blur-xl"></div>
       </div>
-      
       {/* Controls */}
       <div className="mt-10 flex justify-between items-center">
         <Button
@@ -338,12 +337,13 @@ export function TestimonialCarousel() {
           Discover how our immersive technology programs can transform your career path and creative potential.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <a href="/courses" className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+          <a href="/courses/b-voc-in-multimedia-and-animation" className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
             Explore Courses
           </a>
           {/* <a href="/apply" className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
             Apply Now
           </a> */}
+
         </div>
       </div>
     </div>

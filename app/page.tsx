@@ -49,7 +49,7 @@ export default function Home() {
       asChild
       className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20 z-10"
     >
-      <Link href="/courses">Explore Courses</Link>
+      <Link href="/courses/b-voc-in-multimedia-and-animation">Explore Courses</Link>
     </Button>
                 {/* <Button variant="outline" className="text-lg">
                   Take a Virtual Tour

@@ -10,6 +10,10 @@
 // //     highlights: string[];
 // //     category: "degree" | "diploma" | "advanced-diploma" | "short-term";
 // //   }
+
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ReactNode } from "react";
+
   
 // //   export const courses: Course[] = [
 // //     {
@@ -967,7 +971,11 @@ export interface Course {
     image: string;
     highlights: string[];
     category: "degree" | "diploma" | "advanced-diploma" | "short-term";
-    curriculum: { module: string; title: string; duration: string }[];
+    curriculum: {
+      practical?: ReactNode;
+      subjects?: any;
+      image?: string | StaticImport; module: string; title: string; duration: string 
+}[];
     faculty: { name: string; role: string; image: string }[];
     testimonials: { quote: string; author: string }[];
     futureScope: string;
@@ -998,31 +1006,37 @@ export interface Course {
         module: "Semester 1",
         title: "Fundamentals of Computer, Basics of Drawing, Photoshop, Adobe Illustrations, General English & Soft Skills",
         duration: "16 weeks",
+        image:"https://essinstitute.in/wp-content/uploads/2022/11/Photoshop-tutorials-for-freshers.jpg"
       },
       {
         module: "Semester 2",
         title: "Internet Web Application, Media Organization, Pre-Production & Audio Editing, Video Editing, Publication Design",
         duration: "16 weeks",
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXy5cQ3xMRQ2WAtjSpJpo6DqNUWqPV82f30FA1Bi5LpfxOsZXFoHGMomokY9hAMoADYIY&usqp=CAU"
       },
       {
         module: "Semester 3",
         title: "Computer Graphics, Advance Web Designing, Adobe Flash, Programming Concepts & C Language, Environment Science",
         duration: "16 weeks",
+        image:"https://upload.wikimedia.org/wikipedia/commons/9/9f/Blender_4.3.2_screenshot.png"
       },
       {
         module: "Semester 4",
         title: "Basics of Accounting, Principles of Animation, 3D Modeling, Texturing and Rigging, Advanced Communication & Soft Skills",
         duration: "16 weeks",
+        image:"https://cdn-wordpress-info.futurelearn.com/wp-content/uploads/FL_3D_Modelling_Blog_Header_1500x750.jpg.optimal.jpg"
       },
       {
         module: "Semester 5",
         title: "Data Processing & DBMS, Media Ethics, BG/Props/Character Modelling, Cell Animation, Character Animation",
         duration: "16 weeks",
+        image:"https://www.shutterstock.com/shutterstock/videos/1108157143/thumb/12.jpg?ip=x480"
       },
       {
         module: "Semester 6",
         title: "Entrepreneurship Development, 3D Animation, Customer Relationship Management, Material/Camera/Light Concepts, Advance VFX, Project",
         duration: "16 weeks",
+        image:"https://loyalistcollege.com/app/uploads/2024/08/Animation_Hero-Image-scaled.jpg"
       },
     ],
     faculty: [
@@ -1054,6 +1068,9 @@ export interface Course {
     industryInternships:
       "6-month internships with partners like Red Chillies Entertainment and Technicolor, working on live projects in animation and VFX.",
   },
+  
+
+
   
     // Diploma (8 courses)
     {

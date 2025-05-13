@@ -1,7 +1,3 @@
-
-
-
-
 // pages/programs.tsx
 import Image from "next/image";
 import Link from "next/link";
@@ -40,13 +36,41 @@ export default function ProgramsPage() {
 
         <Tabs defaultValue="diploma" className="mb-16">
           <div className="flex justify-center">
-            <TabsList className="mb-8">
-              <TabsTrigger value="degree">Degree Courses</TabsTrigger>
-              <TabsTrigger value="diploma">Diploma Courses</TabsTrigger>
-              <TabsTrigger value="advanced-diploma">Advanced Diploma</TabsTrigger>
-              <TabsTrigger value="short-term">Short-Term & Specialized</TabsTrigger>
+            <TabsList className="mb-8 flex flex-col items-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
+              <TabsTrigger value="degree" className="w-full sm:w-auto">
+                Degree Courses
+              </TabsTrigger>
+              <TabsTrigger value="diploma" className="w-full sm:w-auto">
+                Diploma Courses
+              </TabsTrigger>
+              <TabsTrigger value="advanced-diploma" className="w-full sm:w-auto">
+                Advanced Diploma
+              </TabsTrigger>
+              <TabsTrigger value="short-term" className="w-full sm:w-auto">
+                Short-Term & Specialized
+              </TabsTrigger>
             </TabsList>
           </div>
+
+          {/* Alternative Scrollable Approach (Uncomment to use instead of stacking) */}
+          {/*
+          <div className="flex justify-center">
+            <TabsList className="mb-8 flex overflow-x-auto space-x-2">
+              <TabsTrigger value="degree" className="flex-shrink-0">
+                Degree Courses
+              </TabsTrigger>
+              <TabsTrigger value="diploma" className="flex-shrink-0">
+                Diploma Courses
+              </TabsTrigger>
+              <TabsTrigger value="advanced-diploma" className="flex-shrink-0">
+                Advanced Diploma
+              </TabsTrigger>
+              <TabsTrigger value="short-term" className="flex-shrink-0">
+                Short-Term & Specialized
+              </TabsTrigger>
+            </TabsList>
+          </div>
+          */}
 
           <TabsContent value="degree">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -94,8 +118,6 @@ export default function ProgramsPage() {
                     <CardFooter className="pt-2">
                       <Link href={`/courses/${program.slug}`}>
                         <Button variant="default" className="w-full text-sm">
-                          {/* Apply Now */}
-
                           View Details
                         </Button>
                       </Link>
@@ -412,15 +434,11 @@ export default function ProgramsPage() {
             admissions team to learn more about our programs. Enjoy a 50% discount on all courses for our first batches!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {/* <Button className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20">
-              Apply Now
-            </Button> */}
             <Link href="/admissions">
-  <Button variant="outline" className="text-lg">
-    Contact Admissions
-  </Button>
-</Link>
-           
+              <Button variant="outline" className="text-lg">
+                Contact Admissions
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
