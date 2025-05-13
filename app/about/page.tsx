@@ -645,7 +645,8 @@ export default function AboutPage() {
             <div className="grid gap-12 md:grid-cols-2 items-center">
               <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src="https://dugri.bcmschools.org/Upload/MainBanner/item_b349e0_School.jpg"
+                  // src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt="BCM Foundation campus in Ludhiana"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-110"
@@ -687,7 +688,8 @@ export default function AboutPage() {
             </div>
             <div className="relative h-80 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://www.bmu.edu.in/wp-content/uploads/2024/09/allbegan.png"
+                // src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Students in multimedia and AR/VR lab"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-110"
