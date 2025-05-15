@@ -20,18 +20,9 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-{/* <Image src="/1.png" alt="banner" width={1000} height={1000} className="z-5000" /> */}
 
       <section className="relative overflow-hidden bg-background pt-16">
-        <div className=" mt-9 relative w-full h-[400px]">
-  <Image
-    src="/1.png"
-    alt="banner"
-    fill
-    className="object-cover"
-    priority
-  />
-</div>
+       
 
         <div className="absolute inset-0 z-0 opacity-40">
           <div className="absolute inset-0 bg-tech-pattern opacity-10" />
