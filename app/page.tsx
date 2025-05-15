@@ -21,7 +21,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
 
-      <section className="relative overflow-hidden bg-background pt-16">
+      <section className="relative overflow-hidden bg-background pt-0">
        
 
         <div className="absolute inset-0 z-0 opacity-40">
