@@ -8,6 +8,7 @@ import { PartnerLogos } from "@/components/partner-logos";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { StatsSection } from "@/components/stats-section";
 import RotatingGlowButton from "@/components/ui/RotatingGlowButton";
+import TrustpilotWidget from "@/components/ui/trustpilot";
 
 export default function Home() {
   const generateSlug = (title: string) =>
@@ -19,13 +20,42 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
+{/* <Image src="/1.png" alt="banner" width={1000} height={1000} className="z-5000" /> */}
+
       <section className="relative overflow-hidden bg-background pt-16">
+        <div className=" mt-9 relative w-full h-[400px]">
+  <Image
+    src="/1.png"
+    alt="banner"
+    fill
+    className="object-cover"
+    priority
+  />
+</div>
+
         <div className="absolute inset-0 z-0 opacity-40">
           <div className="absolute inset-0 bg-tech-pattern opacity-10" />
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-background via-transparent to-background" />
         </div>
-        
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:pt-32">
+  <div className="grid items-center gap-12 lg:grid-cols-2">
+    <div className="flex flex-col items-start">
+      <div className="mb-4 inline-flex rounded-full bg-primary/10 px-3 text-sm text-primary">
+        Build Your Future with Creative Technologies
+      </div>
+      <div className="mb-1 inline-flex px-1 text-sm text-gray-900 dark:text-gray-50">
+        An initiative by Munjal Family, Hero Group
+      </div>
+      <h1 className="mb-6 font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+        <span className="text-glow bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+          Multimedia, Design & Tech
+        </span>{" "}
+        Skills for Tomorrow
+      </h1>
+      <p className="mb-8 max-w-md text-lg text-muted-foreground sm:text-xl">
+        Explore a creative world of animation, video editing, graphic design, digital marketing, VFX, robotics, and immersive tech — all under one roof at the School of Immersive Technologies.
+      </p>
+        {/* <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:pt-32">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="flex flex-col items-start">
               <div className="mb-4 inline-flex rounded-full bg-primary/10 px-3 text-sm text-primary">
@@ -42,20 +72,24 @@ export default function Home() {
               </h1>
               <p className="mb-8 max-w-md text-lg text-muted-foreground sm:text-xl">
                 Learn, create, and innovate with cutting-edge AR, VR, and Mixed Reality technologies at the School of Immersive Technologies.
-              </p>
-              <div className="flex flex-wrap gap-4">
+              </p> */}
+              {/* <div className="flex flex-wrap gap-4"> */}
               
-            <Button
-      asChild
-      className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20 z-10"
-    >
-      <Link href="/courses/b-voc-in-multimedia-and-animation">Explore Courses</Link>
-    </Button>
-                {/* <Button variant="outline" className="text-lg">
-                  Take a Virtual Tour
-                </Button> */}
-              </div>
-              <div className="mt-8 flex items-center">
+
+   <div className="flex items-center gap-8 mt-4 mb-0 flex-wrap">
+  <Button
+    asChild
+    className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20 z-10 py-6"
+  >
+    <Link href="/courses/b-voc-in-multimedia-and-animation">Explore Courses</Link>
+  </Button>
+
+  <div className="w-auto">
+    <TrustpilotWidget />
+  </div>
+</div>
+
+              <div className="mt-0 flex items-center">
                
                
                 <span className=" text-sm text-muted-foreground">
@@ -63,9 +97,11 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className="relative h-[400px] lg:h-[600px]">
-              <HeroAnimation />
-            </div>
+            {/* <div className="relative h-[250px] lg:h-[600px]"> */}
+            <div className="relative h-[300px] lg:h-[600px] w-full max-w-[1200px] mx-auto">
+  <HeroAnimation />
+</div>
+
           </div>
         </div>
       </section>
@@ -83,7 +119,7 @@ export default function Home() {
           </div>
           
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <TechnologyCard
+            {/* <TechnologyCard
               icon={<Icons.vr className="h-10 w-10 text-primary" />}
               title="Virtual Reality"
               description="Immerse yourself in completely virtual environments and learn to create transformative VR experiences."
@@ -112,7 +148,50 @@ export default function Home() {
               icon={<Icons.code className="h-10 w-10 text-primary" />}
               title="Game Development"
               description="Learn game development principles and tools specially focused on immersive technologies."
-            />
+            /> */}
+            <TechnologyCard
+  icon={<Icons.multimedia className="h-10 w-10 text-primary" />}
+  title="Multimedia Design"
+  description="Create engaging visual and audio content using multimedia tools for dynamic digital experiences."
+/>
+
+<TechnologyCard
+  icon={<Icons.threeDAnimation className="h-10 w-10 text-primary" />}
+  title="3D Animation"
+  description="Produce dynamic 3D animations with realistic motion for storytelling and media."
+/>
+<TechnologyCard
+  icon={<Icons.graphicDesign className="h-10 w-10 text-primary" />}
+  title="Graphic Design"
+  description="Design stunning visuals for digital and print media using industry-standard graphic tools."
+/>
+
+
+<TechnologyCard
+  icon={<Icons.videoEditing className="h-10 w-10 text-primary" />}
+  title="Video Editing & VFX"
+  description="Master video editing and create stunning VFX for compelling, polished multimedia content."
+/>
+
+
+<TechnologyCard
+  icon={<Icons.robotics className="h-10 w-10 text-primary" />}
+  title="Robotics"
+  description="Explore robotics design and programming for innovative automation and interactive systems."
+/>
+{/* <TechnologyCard
+  icon={<Icons.gameDevelopment className="h-10 w-10 text-primary" />}
+  title="Game Development"
+  description="Build immersive games with a focus on animation and interactive multimedia experiences."
+/> */}
+<TechnologyCard
+  icon={<Icons.vr className="h-10 w-10 text-primary" />}
+  title="Immersive Reality (VR/AR)"
+  description="Create immersive VR environments and innovative AR apps blending digital and real-world experiences."
+/>
+
+
+
           </div>
         </div>
       </section>

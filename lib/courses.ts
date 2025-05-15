@@ -1416,7 +1416,7 @@ export interface Course {
       duration: "1 Year",
       intake: "January, July",
       fees: "₹80,000",
-      image: "https://images.pexels.com/photos/8127803/pexels-photo-8127803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgq_pOVOUU0K2eNkVx983YVX1DjYo9Bru03Q&s",
       highlights: [
         "Training in Toon Boom and Animate",
         "Develop animated shorts",
@@ -1657,54 +1657,7 @@ export interface Course {
     },
   
     // Short-Term (20 courses)
-    {
-      slug: "certificate-in-ui-ux-design-for-ar-vr",
-      title: "Certificate in UI/UX Design for AR/VR",
-      description: "Learn to design intuitive interfaces for augmented and virtual reality applications.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹25,000",
-      image: "https://images.pexels.com/photos/8728303/pexels-photo-8728303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      highlights: [
-        "Figma and Adobe XD training",
-        "AR/VR prototyping",
-        "Industry mentorship",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "UI/UX Principles", duration: "4 weeks" },
-        { module: "Module 2", title: "AR/VR Interface Design", duration: "4 weeks" },
-        { module: "Module 3", title: "Prototyping and Testing", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Ms. Priyanka Desai",
-          role: "UI/UX Specialist",
-          image: "/images/faculty/priyanka-desai.jpg",
-        },
-        {
-          name: "Mr. Amit Verma",
-          role: "AR/VR Designer",
-          image: "/images/faculty/amit-verma.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "This course jumpstarted my career in AR/VR design.",
-          author: "Nikhil P., Alumnus",
-        },
-        {
-          quote: "The practical approach was perfect for quick learning.",
-          author: "Ananya T., Alumna",
-        },
-      ],
-      futureScope:
-        "Roles include UI/UX Designer for AR/VR, Interaction Designer, or Product Designer in tech and gaming industries.",
-      alumniSupport:
-        "Alumni can attend design workshops and connect with AR/VR startups for freelance opportunities.",
-      industryInternships:
-        "1-month internships with AR/VR firms, designing interfaces for innovative applications.",
-    },
+
     {
       slug: "certificate-in-3d-modeling",
       title: "Certificate in 3D Modeling",
@@ -1712,7 +1665,7 @@ export interface Course {
       duration: "4 Months",
       intake: "March, September",
       fees: "₹30,000",
-      image: "https://images.pexels.com/photos/8728130/pexels-photo-8728130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image:"https://www.blendernation.com/wp-content/uploads/2023/05/Process-3-5.jpg",
       highlights: [
         "Blender training",
         "Project-based learning",
@@ -1753,62 +1706,15 @@ export interface Course {
       industryInternships:
         "2-month internships with studios creating assets for games and films.",
     },
-    {
-      slug: "certificate-in-motion-graphics",
-      title: "Certificate in Motion Graphics",
-      description: "Create dynamic motion graphics for videos and advertisements.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹22,000",
-      image: "https://images.pexels.com/photos/8127803/pexels-photo-8127803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      highlights: [
-        "After Effects training",
-        "Create promo videos",
-        "Portfolio building",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Motion Graphics Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Animation Techniques", duration: "4 weeks" },
-        { module: "Module 3", title: "Promo Video Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Sameer Gupta",
-          role: "Motion Graphics Specialist",
-          image: "/images/faculty/sameer-gupta.jpg",
-        },
-        {
-          name: "Ms. Neeta Sharma",
-          role: "Animation Trainer",
-          image: "/images/faculty/neeta-sharma.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created a promo video in just 3 months!",
-          author: "Rohan S., Alumnus",
-        },
-        {
-          quote: "The course was fast-paced and practical.",
-          author: "Meera K., Alumna",
-        },
-      ],
-      futureScope:
-        "Roles as Motion Graphics Designer or Video Editor in advertising and media.",
-      alumniSupport:
-        "Alumni receive project opportunities and access to motion graphics communities.",
-      industryInternships:
-        "1-month internships with agencies, creating motion graphics for ads.",
-    },
+
     {
       slug: "certificate-in-video-editing",
       title: "Certificate in Video Editing",
       description: "Learn professional video editing for short films and ads.",
       duration: "3 Months",
+      image:"https://www.pickcel.com/blog/images/best-video-editing-software-youtube.jpg",
       intake: "April, October",
       fees: "₹20,000",
-      image: "https://images.pexels.com/photos/7749095/pexels-photo-7749095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       highlights: [
         "Premiere Pro training",
         "Edit short films",
@@ -1850,54 +1756,7 @@ export interface Course {
         "1-month internships with studios, editing content for films or ads.",
     },
   
-    {
-      slug: "diploma-in-2d-animation",
-      title: "Diploma in 2D Animation",
-      description: "Create captivating 2D animations for cartoons and digital media.",
-      duration: "1 Year",
-      intake: "January, July",
-      fees: "₹80,000",
-      image: "/images/courses/2d-animation.jpg",
-      highlights: [
-        "Training in Toon Boom and Animate",
-        "Develop animated shorts",
-        "Portfolio building",
-      ],
-      category: "diploma",
-      curriculum: [
-        { module: "Module 1", title: "2D Animation Fundamentals", duration: "12 weeks" },
-        { module: "Module 2", title: "Storyboarding", duration: "12 weeks" },
-        { module: "Module 3", title: "2D Animation Project", duration: "12 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Ms. Lakshmi Nair",
-          role: "2D Animation Expert",
-          image: "/images/faculty/lakshmi-nair.jpg",
-        },
-        {
-          name: "Mr. Manoj Gupta",
-          role: "Storyboarding Instructor",
-          image: "/images/faculty/manoj-gupta.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created my first 2D cartoon in this course!",
-          author: "Anil R., Alumnus",
-        },
-        {
-          quote: "The faculty's passion for animation was inspiring.",
-          author: "Divya M., Alumna",
-        },
-      ],
-      futureScope:
-        "Careers as 2D Animator or Storyboard Artist in animation studios and advertising.",
-      alumniSupport:
-        "Alumni can join 2D animation workshops and connect with cartoon studios.",
-      industryInternships:
-        "3-month internships with animation studios, creating 2D content for TV or online platforms.",
-    },
+
   
     // Advanced Diploma (4 courses)
     {
@@ -2005,7 +1864,7 @@ export interface Course {
       duration: "18 Months",
       intake: "January",
       fees: "₹1,22,000",
-      image: "https://images.pexels.com/photos/6941872/pexels-photo-6941872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs4teeMKs_wO0f3dZScL92Yzgcf4UohvXuAg&s",
       highlights: [
         "Advanced Maya and ZBrush training",
         "Create cinematic animations",
@@ -2054,7 +1913,7 @@ export interface Course {
       duration: "18 Months",
       intake: "January",
       fees: "₹1,30,000",
-      image: "https://images.pexels.com/photos/6941872/pexels-photo-6941872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmaB1dHMjTe-84GpvrNpQ9qpiFhOw00Xfl_w&s",
       highlights: [
         "Advanced Unity and Unreal training",
         "Design immersive experiences",
@@ -2100,12 +1959,12 @@ export interface Course {
     // Short-Term (20 courses)
     {
       slug: "certificate-in-ui-ux-design-for-ar-vr",
-      title: "Certificate in UI/UX Design for AR/VR",
+      title: "Certificate in UI/UX Design",
       description: "Learn to design intuitive interfaces for augmented and virtual reality applications.",
       duration: "3 Months",
       intake: "April, October",
       fees: "₹25,000",
-      image: "/images/courses/ui-ux-ar-vr.jpg",
+      image: "https://s3-alpha.figma.com/hub/file/4340579108/e1f2a8ea-a3d1-4c04-98df-f5ca6e12741c-cover.png",
       highlights: [
         "Figma and Adobe XD training",
         "AR/VR prototyping",
@@ -2146,150 +2005,8 @@ export interface Course {
       industryInternships:
         "1-month internships with AR/VR firms, designing interfaces for innovative applications.",
     },
-    {
-      slug: "certificate-in-3d-modeling",
-      title: "Certificate in 3D Modeling",
-      description: "Learn to create 3D models for games and animations using Blender.",
-      duration: "4 Months",
-      intake: "March, September",
-      fees: "₹30,000",
-      image: "/images/courses/3d-modeling.jpg",
-      highlights: [
-        "Blender training",
-        "Project-based learning",
-        "Industry feedback",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "3D Modeling Basics", duration: "5 weeks" },
-        { module: "Module 2", title: "Texturing and Rendering", duration: "5 weeks" },
-        { module: "Module 3", title: "Final Model Project", duration: "6 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Rahul Jain",
-          role: "3D Artist",
-          image: "/images/faculty/rahul-jain.jpg",
-        },
-        {
-          name: "Ms. Shalini Roy",
-          role: "Modeling Instructor",
-          image: "/images/faculty/shalini-roy.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I modeled my first game asset!",
-          author: "Vikas B., Alumnus",
-        },
-        {
-          quote: "The faculty was incredibly supportive.",
-          author: "Tara L., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a 3D Modeler or Asset Designer in gaming and animation studios.",
-      alumniSupport:
-        "Join our 3D modeling community for ongoing learning and job opportunities.",
-      industryInternships:
-        "2-month internships with studios creating assets for games and films.",
-    },
-    {
-      slug: "certificate-in-motion-graphics",
-      title: "Certificate in Motion Graphics",
-      description: "Create dynamic motion graphics for videos and advertisements.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹22,000",
-      image: "/images/courses/motion-graphics-cert.jpg",
-      highlights: [
-        "After Effects training",
-        "Create promo videos",
-        "Portfolio building",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Motion Graphics Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Animation Techniques", duration: "4 weeks" },
-        { module: "Module 3", title: "Promo Video Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Sameer Gupta",
-          role: "Motion Graphics Specialist",
-          image: "/images/faculty/sameer-gupta.jpg",
-        },
-        {
-          name: "Ms. Neeta Sharma",
-          role: "Animation Trainer",
-          image: "/images/faculty/neeta-sharma.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created a promo video in just 3 months!",
-          author: "Rohan S., Alumnus",
-        },
-        {
-          quote: "The course was fast-paced and practical.",
-          author: "Meera K., Alumna",
-        },
-      ],
-      futureScope:
-        "Roles as Motion Graphics Designer or Video Editor in advertising and media.",
-      alumniSupport:
-        "Alumni receive project opportunities and access to motion graphics communities.",
-      industryInternships:
-        "1-month internships with agencies, creating motion graphics for ads.",
-    },
-    {
-      slug: "certificate-in-video-editing",
-      title: "Certificate in Video Editing",
-      description: "Learn professional video editing for short films and ads.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹20,000",
-      image: "/images/courses/video-editing-cert.jpg",
-      highlights: [
-        "Premiere Pro training",
-        "Edit short films",
-        "Industry feedback",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Video Editing Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Transitions and Effects", duration: "4 weeks" },
-        { module: "Module 3", title: "Short Film Editing", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Anil Patel",
-          role: "Video Editor",
-          image: "/images/faculty/anil-patel.jpg",
-        },
-        {
-          name: "Ms. Riya Gupta",
-          role: "Editing Instructor",
-          image: "/images/faculty/riya-gupta.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I edited my first short film in this course!",
-          author: "Suresh M., Alumnus",
-        },
-        {
-          quote: "The editing tools were easy to learn.",
-          author: "Pooja V., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a Video Editor or Post-Production Assistant in film and digital media.",
-      alumniSupport:
-        "Alumni can join editing workshops and connect with production houses.",
-      industryInternships:
-        "1-month internships with studios, editing content for films or ads.",
-    },
+
+
     {
       slug: "certificate-in-2d-animation",
       title: "Certificate in 2D Animation",
@@ -2297,7 +2014,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹22,000",
-      image: "/images/courses/2d-animation-cert.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTLtHaMuPGE8ockivgBb7aBtONI7IJ1S4DA&s",
       highlights: [
         "Toon Boom training",
         "Create animated shorts",
@@ -2345,7 +2062,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹20,000",
-      image: "/images/courses/graphic-design-cert.jpg",
+      image: "https://strohackerdesignschool.co.uk/wp-content/uploads/2023/02/Professional-Graphic-Design-Course-1024x683.jpg",
       highlights: [
         "Photoshop and Illustrator training",
         "Design logos and posters",
@@ -2386,102 +2103,8 @@ export interface Course {
       industryInternships:
         "1-month internships with design agencies, creating branding materials.",
     },
-    {
-      slug: "certificate-in-ar-vr-prototyping",
-      title: "Certificate in AR/VR Prototyping",
-      description: "Build prototypes for AR and VR applications using Unity.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹25,000",
-      image: "/images/courses/ar-vr-proto.jpg",
-      highlights: [
-        "Unity prototyping",
-        "Create AR/VR demos",
-        "Industry mentorship",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "AR/VR Prototyping Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Unity for Prototyping", duration: "4 weeks" },
-        { module: "Module 3", title: "AR/VR Demo Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Siddharth Gupta",
-          role: "AR/VR Specialist",
-          image: "/images/faculty/siddharth-gupta.jpg",
-        },
-        {
-          name: "Ms. Kavita Rao",
-          role: "Unity Trainer",
-          image: "/images/faculty/kavita-rao.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I built an AR prototype in just 3 months!",
-          author: "Rahul P., Alumnus",
-        },
-        {
-          quote: "The course was hands-on and practical.",
-          author: "Pooja S., Alumna",
-        },
-      ],
-      futureScope:
-        "Roles as AR/VR Prototype Developer or Interaction Designer in tech and gaming.",
-      alumniSupport:
-        "Alumni join AR/VR prototyping workshops and startup networks.",
-      industryInternships:
-        "1-month internships with AR/VR firms, building prototypes for clients.",
-    },
-    {
-      slug: "certificate-in-game-art",
-      title: "Certificate in Game Art",
-      description: "Create stunning game art for characters and environments.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹22,000",
-      image: "/images/courses/game-art.jpg",
-      highlights: [
-        "ZBrush and Photoshop training",
-        "Design game assets",
-        "Portfolio development",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Game Art Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Character Design", duration: "4 weeks" },
-        { module: "Module 3", title: "Game Art Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Arjun Roy",
-          role: "Game Artist",
-          image: "/images/faculty/arjun-roy.jpg",
-        },
-        {
-          name: "Ms. Priya Nair",
-          role: "Art Instructor",
-          image: "/images/faculty/priya-nair.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I designed a game character for my portfolio!",
-          author: "Karan S., Alumnus",
-        },
-        {
-          quote: "The course was perfect for game art beginners.",
-          author: "Anjali P., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a Game Artist or Concept Artist in the gaming industry.",
-      alumniSupport:
-        "Alumni join game art communities for networking and projects.",
-      industryInternships:
-        "1-month internships with game studios, creating art for games.",
-    },
+
+   
     {
       slug: "certificate-in-vfx-for-films",
       title: "Certificate in VFX for Films",
@@ -2489,7 +2112,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹24,000",
-      image: "/images/courses/vfx-films.jpg",
+      image: "vr_2.webp",
       highlights: [
         "After Effects training",
         "Create VFX shots",
@@ -2530,54 +2153,7 @@ export interface Course {
       industryInternships:
         "1-month internships with VFX studios, working on film shots.",
     },
-    {
-      slug: "certificate-in-digital-illustration",
-      title: "Certificate in Digital Illustration",
-      description: "Create stunning digital illustrations for books and media.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹20,000",
-      image: "/images/courses/digital-illustration.jpg",
-      highlights: [
-        "Procreate and Photoshop training",
-        "Illustrate book covers",
-        "Portfolio building",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Digital Illustration Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Character Illustration", duration: "4 weeks" },
-        { module: "Module 3", title: "Illustration Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Ms. Rhea Sharma",
-          role: "Illustrator",
-          image: "/images/faculty/rhea-sharma.jpg",
-        },
-        {
-          name: "Mr. Sameer Roy",
-          role: "Illustration Trainer",
-          image: "/images/faculty/sameer-roy.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I illustrated a book cover in this course!",
-          author: "Nikhil R., Alumnus",
-        },
-        {
-          quote: "The faculty's feedback was amazing.",
-          author: "Tara S., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a Digital Illustrator or Concept Artist in publishing and media.",
-      alumniSupport:
-        "Alumni join illustration communities for freelance opportunities.",
-      industryInternships:
-        "1-month internships with publishers, creating illustrations for books.",
-    },
+
     {
       slug: "certificate-in-character-animation",
       title: "Certificate in Character Animation",
@@ -2585,7 +2161,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹22,000",
-      image: "/images/courses/character-animation.jpg",
+      image: "https://i.ytimg.com/vi/TjJLIuFKA20/maxresdefault.jpg",
       highlights: [
         "Maya training",
         "Animate characters",
@@ -2626,102 +2202,8 @@ export interface Course {
       industryInternships:
         "1-month internships with studios, animating characters for films or games.",
     },
-    {
-      slug: "certificate-in-environment-design",
-      title: "Certificate in Environment Design",
-      description: "Design immersive environments for games and films.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹22,000",
-      image: "/images/courses/environment-design.jpg",
-      highlights: [
-        "Unreal Engine training",
-        "Design game worlds",
-        "Portfolio building",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Environment Design Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "World Building", duration: "4 weeks" },
-        { module: "Module 3", title: "Environment Design Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Rohan Sharma",
-          role: "Environment Designer",
-          image: "/images/faculty/rohan-sharma.jpg",
-        },
-        {
-          name: "Ms. Ananya Gupta",
-          role: "Design Trainer",
-          image: "/images/faculty/ananya-gupta.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I designed a game world in this course!",
-          author: "Vikram S., Alumnus",
-        },
-        {
-          quote: "The faculty's guidance was top-notch.",
-          author: "Shreya P., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as an Environment Designer or Level Artist in gaming and film industries.",
-      alumniSupport:
-        "Alumni join environment design communities for projects and networking.",
-      industryInternships:
-        "1-month internships with studios, designing environments for games or films.",
-    },
-    {
-      slug: "certificate-in-storyboarding",
-      title: "Certificate in Storyboarding",
-      description: "Learn to create storyboards for animations and films.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹20,000",
-      image: "/images/courses/storyboarding.jpg",
-      highlights: [
-        "Storyboarding techniques",
-        "Create film storyboards",
-        "Portfolio development",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Storyboarding Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Visual Storytelling", duration: "4 weeks" },
-        { module: "Module 3", title: "Storyboard Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Ms. Rhea Patel",
-          role: "Storyboard Artist",
-          image: "/images/faculty/rhea-patel.jpg",
-        },
-        {
-          name: "Mr. Sameer Sharma",
-          role: "Storyboarding Trainer",
-          image: "/images/faculty/sameer-sharma.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created a storyboard for a short film!",
-          author: "Nikhil K., Alumnus",
-        },
-        {
-          quote: "The course was perfect for visual storytelling.",
-          author: "Tara R., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a Storyboard Artist or Visual Development Artist in animation and film.",
-      alumniSupport:
-        "Alumni join storyboarding workshops and connect with studios.",
-      industryInternships:
-        "1-month internships with studios, creating storyboards for films or animations.",
-    },
+
+    
     {
       slug: "certificate-in-color-grading",
       title: "Certificate in Color Grading",
@@ -2729,7 +2211,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹22,000",
-      image: "/images/courses/color-grading.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW_hWaYIMX6Y0iWkQTnwx3O6wFUnYMPB0hHaLWWmTKn4mrGX20teNbJk0JJpbMTku5uBM&usqp=CAU",
       highlights: [
         "DaVinci Resolve training",
         "Grade short films",
@@ -2770,102 +2252,7 @@ export interface Course {
       industryInternships:
         "1-month internships with studios, grading content for films or ads.",
     },
-    {
-      slug: "certificate-in-3d-printing-for-design",
-      title: "Certificate in 3D Printing for Design",
-      description: "Learn 3D printing techniques for prototyping and design.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹25,000",
-      image: "/images/courses/3d-printing.jpg",
-      highlights: [
-        "3D printing tools",
-        "Create prototypes",
-        "Industry mentorship",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "3D Printing Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Prototyping Techniques", duration: "4 weeks" },
-        { module: "Module 3", title: "3D Printing Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Rohan Gupta",
-          role: "3D Printing Expert",
-          image: "/images/faculty/rohan-gupta.jpg",
-        },
-        {
-          name: "Ms. Ananya Patel",
-          role: "Prototyping Trainer",
-          image: "/images/faculty/ananya-patel.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created a 3D printed prototype!",
-          author: "Vikram P., Alumnus",
-        },
-        {
-          quote: "The course was innovative and practical.",
-          author: "Shreya S., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a 3D Printing Designer or Prototype Developer in design and manufacturing.",
-      alumniSupport:
-        "Alumni join 3D printing communities for networking and projects.",
-      industryInternships:
-        "1-month internships with design firms, creating 3D printed prototypes.",
-    },
-    {
-      slug: "certificate-in-vr-game-design",
-      title: "Certificate in VR Game Design",
-      description: "Design immersive VR games using Unity.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹25,000",
-      image: "/images/courses/vr-game-design.jpg",
-      highlights: [
-        "Unity VR training",
-        "Create VR games",
-        "Industry feedback",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "VR Game Design Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "VR Mechanics", duration: "4 weeks" },
-        { module: "Module 3", title: "VR Game Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Mr. Siddharth Sharma",
-          role: "VR Game Designer",
-          image: "/images/faculty/siddharth-sharma.jpg",
-        },
-        {
-          name: "Ms. Kavita Gupta",
-          role: "VR Trainer",
-          image: "/images/faculty/kavita-gupta.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I designed a VR game in this course!",
-          author: "Rahul S., Alumnus",
-        },
-        {
-          quote: "The course was cutting-edge and fun.",
-          author: "Pooja R., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a VR Game Designer or Immersive Developer in the gaming industry.",
-      alumniSupport:
-        "Alumni join VR game design communities for networking and projects.",
-      industryInternships:
-        "1-month internships with VR studios, designing games or experiences.",
-    },
+
     {
       slug: "certificate-in-augmented-reality",
       title: "Certificate in Augmented Reality",
@@ -2873,7 +2260,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹25,000",
-      image: "/images/courses/augmented-reality.jpg",
+      image: "ar.jpg",
       highlights: [
         "AR development tools",
         "Create AR apps",
@@ -2914,54 +2301,7 @@ export interface Course {
       industryInternships:
         "1-month internships with AR startups, creating mobile AR applications.",
     },
-    {
-      slug: "certificate-in-visual-storytelling",
-      title: "Certificate in Visual Storytelling",
-      description: "Learn to tell compelling stories through visuals for films and games.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹20,000",
-      image: "/images/courses/visual-storytelling.jpg",
-      highlights: [
-        "Visual storytelling techniques",
-        "Create narrative visuals",
-        "Portfolio building",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Storytelling Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Visual Narrative Techniques", duration: "4 weeks" },
-        { module: "Module 3", title: "Visual Storytelling Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Ms. Neha Sharma",
-          role: "Storytelling Expert",
-          image: "/images/faculty/neha-sharma-story.jpg",
-        },
-        {
-          name: "Mr. Rajesh Gupta",
-          role: "Narrative Trainer",
-          image: "/images/faculty/rajesh-gupta.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created a visual story for a game!",
-          author: "Amit S., Alumnus",
-        },
-        {
-          quote: "The course was inspiring and creative.",
-          author: "Riya P., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a Visual Storyteller or Narrative Designer in film and gaming industries.",
-      alumniSupport:
-        "Alumni join storytelling communities for networking and projects.",
-      industryInternships:
-        "1-month internships with studios, creating visuals for films or games.",
-    },
+
     {
       slug: "certificate-in-digital-sculpting",
       title: "Certificate in Digital Sculpting",
@@ -2969,7 +2309,7 @@ export interface Course {
       duration: "3 Months",
       intake: "April, October",
       fees: "₹22,000",
-      image: "/images/courses/digital-sculpting.jpg",
+      image: "https://i.materialise.com/blog/wp-content/uploads/2013/10/CapturedHead02_OriginalMeshAndTexture.jpg",
       highlights: [
         "ZBrush training",
         "Sculpt characters",
@@ -3010,53 +2350,6 @@ export interface Course {
       industryInternships:
         "1-month internships with studios, sculpting characters for games or films.",
     },
-    {
-      slug: "certificate-in-concept-art",
-      title: "Certificate in Concept Art",
-      description: "Create concept art for films, games, and animations.",
-      duration: "3 Months",
-      intake: "April, October",
-      fees: "₹22,000",
-      image: "/images/courses/concept-art.jpg",
-      highlights: [
-        "Photoshop training",
-        "Design concepts",
-        "Portfolio building",
-      ],
-      category: "short-term",
-      curriculum: [
-        { module: "Module 1", title: "Concept Art Basics", duration: "4 weeks" },
-        { module: "Module 2", title: "Environment Concepts", duration: "4 weeks" },
-        { module: "Module 3", title: "Concept Art Project", duration: "4 weeks" },
-      ],
-      faculty: [
-        {
-          name: "Ms. Rhea Gupta",
-          role: "Concept Artist",
-          image: "/images/faculty/rhea-gupta.jpg",
-        },
-        {
-          name: "Mr. Sameer Patel",
-          role: "Art Trainer",
-          image: "/images/faculty/sameer-patel.jpg",
-        },
-      ],
-      testimonials: [
-        {
-          quote: "I created concept art for a game!",
-          author: "Nikhil S., Alumnus",
-        },
-        {
-          quote: "The course was perfect for aspiring artists.",
-          author: "Tara P., Alumna",
-        },
-      ],
-      futureScope:
-        "Work as a Concept Artist or Visual Development Artist in gaming and film industries.",
-      alumniSupport:
-        "Alumni join concept art communities for networking and projects.",
-      industryInternships:
-        "1-month internships with studios, creating concept art for games or films.",
-    },
+   
   ];
   
