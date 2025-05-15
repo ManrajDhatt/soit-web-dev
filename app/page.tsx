@@ -210,7 +210,8 @@ export default function Home() {
             {
               title: "B.Voc. in Multimedia and Animation",
               duration: "3 Years",
-              image: "https://subharti.bvocskill.com/img/courses/multimedia-animation.webp",
+              image:"https://media.greatbigphotographyworld.com/wp-content/uploads/2023/05/video-editor.jpg",
+              // image: "https://subharti.bvocskill.com/img/courses/multimedia-animation.webp",
             },
             {
               title: "Augmented Reality & Virtual Reality",
