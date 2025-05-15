@@ -993,7 +993,7 @@ export interface Course {
     duration: "3 Years",
     intake: "July",
     fees: "₹1,61,000 (Total)",
-    image: "https://subharti.bvocskill.com/img/courses/multimedia-animation.webp",
+    image:"https://media.greatbigphotographyworld.com/wp-content/uploads/2023/05/video-editor.jpg",
     highlights: [
       "Industry-aligned curriculum",
       "Hands-on training with Maya and Blender",
