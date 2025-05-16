@@ -65,7 +65,7 @@ export default function MeetOurTeamPage() {
             },
             {
               name: "Lovepreet Singh",
-              role: "IT",
+              role: "Technical Associate [IT]",
               image: "/teacher/lovepree_IT.jpg",
               description: "Maintaining IT infrastructure and supporting tech-driven learning environments.",
             },
@@ -83,7 +83,7 @@ export default function MeetOurTeamPage() {
             },
             {
               name: "Saurav Sharma",
-              role: "AR/VR Expert",
+              role: "3D Generalist",
               image: "/teacher/saurav_teacher.jpg",
               description: "Specializing in AR/VR technologies, mentoring students in cutting-edge development.",
             },
@@ -101,7 +101,7 @@ export default function MeetOurTeamPage() {
             },
             {
               name: "Karan Singh",
-              role: "AR/VR Trainer",
+              role: "Graphic Designer",
               image: "/teacher/karan_teacher.jpg",
               description: "Equipping students with expertise in AR/VR technologies for real-world applications.",
             },
