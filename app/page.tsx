@@ -21,7 +21,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
 
-      <section className="relative overflow-hidden bg-background pt-0">
+      <section className="relative overflow-hidden bg-background pt-10">
        
 
         <div className="absolute inset-0 z-0 opacity-40">
@@ -34,15 +34,26 @@ export default function Home() {
       <div className="mb-4 inline-flex rounded-full bg-primary/10 px-3 text-sm text-primary">
         Build Your Future with Creative Technologies
       </div>
-      <div className="mb-1 inline-flex px-1 text-sm text-gray-900 dark:text-gray-50">
+      <h1 className="mb-6 font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+  <span className="text-glow bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+    Multimedia, Design & Tech
+  </span>
+  <br />
+  <span className="block text-xl sm:text-2xl md:text-3xl text-muted-foreground tracking-normal leading-relaxed mt-2">
+    Skills for Tomorrow
+  </span>
+</h1>
+
+      {/* <div className="mb-1 inline-flex px-1 text-sm text-gray-900 dark:text-gray-50">
         An initiative by Munjal Family, Hero Group
       </div>
       <h1 className="mb-6 font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
         <span className="text-glow bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
           Multimedia, Design & Tech
         </span>{" "}
-        Skills for Tomorrow
-      </h1>
+      Skills for Tomorrow
+
+      </h1> */}
       <p className="mb-8 max-w-md text-lg text-muted-foreground sm:text-xl">
         Explore a creative world of animation, video editing, graphic design, digital marketing, VFX, robotics, and immersive tech — all under one roof at the School of Immersive Technologies.
       </p>
@@ -67,10 +78,22 @@ export default function Home() {
               {/* <div className="flex flex-wrap gap-4"> */}
               
 
-   <div className="flex items-center gap-8 mt-4 mb-0 flex-wrap">
+   {/* <div className="flex items-center gap-8 mt-4 mb-0 flex-wrap">
   <Button
     asChild
     className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20 z-10 py-6"
+  >
+    <Link href="/courses/b-voc-in-multimedia-and-animation">Explore Courses</Link>
+  </Button>
+
+  <div className="w-auto">
+    <TrustpilotWidget />
+  </div>
+</div> */}
+<div className="flex items-center gap-4 mt-4 mb-0 flex-nowrap">
+  <Button
+    asChild
+    className="bg-gradient-to-r from-primary to-accent text-lg hover:shadow-lg hover:shadow-accent/20 z-10 py-6 whitespace-nowrap"
   >
     <Link href="/courses/b-voc-in-multimedia-and-animation">Explore Courses</Link>
   </Button>
@@ -97,6 +120,57 @@ export default function Home() {
         </div>
       </section>
       
+
+{/* BCM & Hero Cycle Group Section */}
+<section className="relative bg-gradient-to-br from-gray-100 via-white to-gray-200 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  {/* Top Gradient Transition */}
+  <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-white to-transparent z-10" />
+
+  {/* Bottom Gradient Transition */}
+  <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-10" />
+
+  <div className="relative z-20 mx-auto max-w-7xl">
+    <div className="mx-auto max-w-3xl text-center">
+      <h2 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-black sm:text-5xl">
+        Powered by BCM Foundation & Hero Cycle Group
+      </h2>
+      <p className="mb-10 text-lg text-black">
+        The School of Immersive Technologies is proudly supported by the BCM Foundation and the Hero Cycle Group, leaders in innovation, education, and industry excellence.
+      </p>
+    </div>
+
+    <div className="grid gap-10 sm:grid-cols-2">
+      <div className="rounded-xl border border-blue-200 bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h3 className="mb-4 font-heading text-2xl font-semibold text-black">
+          BCM Foundation & MBCIE
+        </h3>
+        <p className="text-black text-base leading-relaxed">
+          The BCM Foundation, through the Munjal BCU Centre of Innovation & Entrepreneurship (MBCIE), drives innovation and creativity in education. Led by Mr. Sunil Kant Munjal and Prof. Julian Beer, MBCIE adopts a STEAM-oriented approach to transform learning. With a state-of-the-art Incubation Centre, it empowers young entrepreneurs to launch startups and foster innovation in SOIT’s world-class multimedia and immersive technology education.
+        </p>
+      </div>
+
+      <div className="rounded-xl border border-blue-200 bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h3 className="mb-4 font-heading text-2xl font-semibold text-black">
+          Hero Cycle Group
+        </h3>
+        <p className="text-black text-base leading-relaxed">
+          The Hero Cycle Group, founded by the visionary Munjal Family, is a global leader in manufacturing and innovation. With a legacy of excellence, it supports transformative initiatives like SOIT, enabling access to cutting-edge training and industry-aligned programs that prepare students for careers in the digital and creative industries.
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-12 text-center">
+      <p className="text-base text-black">
+        Together, BCM Foundation and Hero Cycle Group are shaping the future of education and innovation at SOIT.
+      </p>
+    </div>
+  </div>
+
+  {/* Decorative background blur circles */}
+  <div className="absolute top-10 left-[-80px] w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+  <div className="absolute bottom-[-80px] right-[-80px] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-pulse"></div>
+</section>
+
       {/* Tech Section */}
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -171,14 +171,14 @@ export function EnquireButton() {
                   {/* Privacy and Terms */}
                   <p className="text-xs text-muted-foreground">
                     Your personal information will be handled as per our{" "}
-                    <a href="/privacy" className="text-primary underline">
+                    <a href="/privacy-policy" className="text-primary underline">
                       Privacy Policy
                     </a>
                     . You can opt out anytime.
                   </p>
                   <p className="text-xs font-semibold">
                     By submitting this form, you accept and agree to our{" "}
-                    <a href="/terms" className="text-primary underline">
+                    <a href="/terms-of-use" className="text-primary underline">
                       Terms of Use
                     </a>
                     .

@@ -137,7 +137,7 @@ export function Footer() {
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  admission@mbcie.org
+                  addmission@mbcie.org
                 </span>
               </li>
             </ul>
@@ -150,15 +150,15 @@ export function Footer() {
               © {new Date().getFullYear()} School of Immersive Technologies. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-muted-foreground">
-              <Link href="#" className="hover:text-foreground">
+              <Link href="/privacy-policy" className="hover:text-foreground">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-foreground">
+              <Link href="/terms-of-use" className="hover:text-foreground">
                 Terms of Service
               </Link>
-              <Link href="#" className="hover:text-foreground">
+              {/* <Link href="#" className="hover:text-foreground">
                 Cookie Policy
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

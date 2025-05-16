@@ -636,7 +636,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="font-heading text-4xl font-bold tracking-tight text-foreground mb-4">
-                BCM Foundation: A Legacy of Excellence
+                BCM Foundation: A Legacy of Hero Cycle
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Rooted in a commitment to education since 1976, BCM Foundation is a pioneer in shaping Punjab’s academic landscape.
