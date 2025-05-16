@@ -521,11 +521,11 @@ interface Props {
   params: { courseSlug: string };
 }
 
-export async function generateStaticParams() {
-  return courses.map((course) => ({
-    courseSlug: course.slug,
-  }));
-}
+// export default function generateStaticParams() {
+//   return courses.map((course) => ({
+//     courseSlug: course.slug,
+//   }));
+// }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = courses.find((c) => c.slug === params.courseSlug);
