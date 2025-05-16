@@ -691,11 +691,10 @@ import { Menu, ChevronDown, ChevronRight } from "lucide-react";
 
 // Define course categories
 const categories = [
-    { name: "Certificate", value: "short-term" },
-{ name: "Diploma", value: "diploma" },
-  { name: "Advanced Diploma", value: "advanced-diploma" },
   { name: "Degree", value: "degree" },
-  
+  { name: "Diploma", value: "diploma" },
+  { name: "Advanced Diploma", value: "advanced-diploma" },
+  { name: "Short-Term", value: "short-term" },
 ];
 
 // Updated navItems with "Courses" in the third position
@@ -722,7 +721,7 @@ const navItems = [
       { name: "Admission Process", path: "/admission/admission-process" },
     ],
   },
-  {name:"SOIT",
+    {name:"SOIT",
     dropdown: [
       { name: "Activities", path: "/SOIT/Activities" },
       { name: "Events", path: "/SOIT/Events"},
