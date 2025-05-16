@@ -636,7 +636,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="font-heading text-4xl font-bold tracking-tight text-foreground mb-4">
-                BCM Foundation: A Legacy of Hero Cycle
+                BCM Foundation: A Legacy of Hero Family 
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Rooted in a commitment to education since 1976, BCM Foundation is a pioneer in shaping Punjab’s academic landscape.
@@ -677,7 +677,7 @@ export default function AboutPage() {
                 Munjal Family & Hero Group
               </h2>
               <p className="mb-6 text-muted-foreground">
-                The School of Immersive Technologies is a proud extension of the Munjal family’s legacy, rooted in the entrepreneurial spirit of Hero Group. Founded in 1956 by the Munjal brothers, Hero Cycles laid the foundation for what would become the world’s largest two-wheeler manufacturer, Hero MotoCorp.
+                The School of Immersive Technologies is a proud extension of the Munjal family’s legacy, rooted in the entrepreneurial spirit of Hero Group. Founded in 1956 by the Munjal brothers, Hero family laid the foundation for what would become the world’s largest two-wheeler manufacturer, Hero MotoCorp.
               </p>
               <p className="mb-6 text-muted-foreground">
                 Under the leadership of Mr. Sunil Kant Munjal, Chairman of Hero Enterprise, the family has diversified into education, healthcare, and social initiatives. Their commitment to innovation and social responsibility is evident in the establishment of the Munjal BCU Centre of Innovation & Entrepreneurship in 2018, which houses the School of Immersive Technologies.
