@@ -197,10 +197,10 @@ export default function OurPatronPage() {
             {[
               {
                 name: "Mr. S.K. Rai",
-                role: "Managing Director, Hero Cycles",
+                role: "Managing Director, Hero Group",
                 image: "https://media.licdn.com/dms/image/v2/C5103AQHzIWt1d060YQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1554471524644?e=2147483647&v=beta&t=M4fmDgarvhc0g7UbQkJ5olW7NfR6J5gywc4gItmhdyI", // Replace with actual image path
                 introduction:
-                  "Mr. S.K. Rai is the Managing Director of Hero Cycles Limited, the world’s largest bicycle manufacturer. With over 40 years of experience in the Indian manufacturing industry, he has been instrumental in driving technological innovation and mass production, establishing Hero Cycles as a global leader. He is also deeply involved in educational and cultural initiatives, serving as the General Secretary and Organizational Secretary of Ludhiana Sanskritik Samagam.",
+                  "Mr. S.K. Rai is the Managing Director of Hero Cycles Limited, the world’s largest bicycle manufacturer. With over 40 years of experience in the Indian manufacturing industry, he has been instrumental in driving technological innovation and mass production, establishing Hero Group as a global leader. He is also deeply involved in educational and cultural initiatives, serving as the General Secretary and Organizational Secretary of Ludhiana Sanskritik Samagam.",
                 message:
                   "At SOIT, we aim to empower the next generation of creators with cutting-edge skills in immersive technologies. I’m proud to support an institution that bridges innovation and education to shape a brighter future.",
               },

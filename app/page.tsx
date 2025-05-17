@@ -72,11 +72,11 @@ export default function Home() {
         </section>
 
         {/* BCM & Hero Cycle Group Section */}
-        <section className="relative bg-gradient-to-br from-gray-100 via-white to-gray-200 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-white to-transparent z-10" />
-          <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-10" />
+        <section className="relative bg-gradient-to-br from-background via-white to-transparent py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-background to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-100 to-transparent z-10" />
           <div className="relative z-20 mx-auto max-w-7xl">
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-3xl text-center ">
               <h2 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-black sm:text-5xl">
                 Powered by BCM & Hero Family Foundation
               </h2>
@@ -85,7 +85,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-10 sm:grid-cols-2">
-              <div className="rounded-xl border border-blue-200 bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="rounded-xl border border-blue-100 bg-gray-50 p-8 shadow-lg hover:shadow-2xl hover:bg-purple-50 transition-shadow duration-300">
                 <h3 className="mb-4 font-heading text-2xl font-semibold text-black">
                   BCM Foundation & MBCIE
                 </h3>
@@ -93,7 +93,7 @@ export default function Home() {
                   The BCM Foundation, through the Munjal BCU Centre of Innovation & Entrepreneurship (MBCIE), drives innovation and creativity in education. Led by Mr. Sunil Kant Munjal and Prof. Julian Beer, MBCIE adopts a STEAM-oriented approach to transform learning. With a state-of-the-art Incubation Centre, it empowers young entrepreneurs to launch startups and foster innovation in SOIT’s world-class multimedia and immersive technology education.
                 </p>
               </div>
-              <div className="rounded-xl border border-blue-200 bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="rounded-xl border border-blue-100 bg-gray-50 p-8 shadow-lg hover:shadow-2xl hover:bg-purple-50 transition-shadow duration-300">
                 <h3 className="mb-4 font-heading text-2xl font-semibold text-black">
                   Hero Family Foundation
                 </h3>
@@ -108,8 +108,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="absolute top-10 left-[-80px] w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-[-80px] right-[-80px] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-10 left-[-80px] w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse z-10"></div>
+          <div className="absolute bottom-[-80px] right-[-80px] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-pulse z-10"></div>
         </section>
 
         {/* Tech Section */}

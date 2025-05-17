@@ -47,7 +47,7 @@ export default function HeroGroupPage() {
           <div className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg">
             <h3 className="mb-3 font-heading text-xl font-semibold">Founding and Growth</h3>
             <p className="text-muted-foreground">
-              Founded in 1956 by the Munjal brothers, Hero Cycles grew from a bicycle manufacturer to the world’s largest two-wheeler producer, Hero MotoCorp. The group’s diversification into education, healthcare, and social initiatives reflects its commitment to societal impact.
+              Founded in 1956 by the Munjal brothers, Hero Group grew from a bicycle manufacturer to the world’s largest two-wheeler producer, Hero MotoCorp. The group’s diversification into education, healthcare, and social initiatives reflects its commitment to societal impact.
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg">

@@ -33,7 +33,7 @@ export default function BcmFoundationPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/50" />
             <div className="absolute inset-0 flex flex-col items-start justify-center p-8 sm:p-12">
               <h2 className="mb-4 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                A Legacy of Hero Cycle
+                A Legacy of Hero Group
               </h2>
               <p className="max-w-md text-lg text-foreground sm:text-xl">
                 BCM Foundation, founded by the Munjal family, is the cornerstone of SOIT’s mission to transform education in Punjab.
